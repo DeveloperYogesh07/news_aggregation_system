@@ -1,0 +1,40 @@
+from fastapi import APIRouter, Depends, HTTPException
+from sqlalchemy.orm import Session
+from app.api.deps import get_current_user
+from app.core.database import get_db
+from app.schemas.saved_articles import SavedArticleCreate, SavedArticleRead
+from app.repositories.saved_article_repository import SavedArticleRepository
+from app.models.user import User
+
+router = APIRouter()
+
+@router.post("/", response_model=SavedArticleRead)
+def create_saved_article(
+    article_in: SavedArticleCreate,
+    db: Session = Depends(get_db),
+    current_user: User = Depends(get_current_user)
+):
+    return SavedArticleRepository.create(
+        db=db,
+        user_id=current_user.id,
+        title=article_in.title,
+        content=article_in.content,
+        url=str(article_in.url) if article_in.url else None
+    )
+
+@router.get("/", response_model=list[SavedArticleRead])
+def list_saved_articles(
+    db: Session = Depends(get_db),
+    current_user: User = Depends(get_current_user)
+):
+    return SavedArticleRepository.get_for_user(db=db, user_id=current_user.id)
+
+@router.delete("/{article_id}", status_code=204)
+def delete_saved_article(
+    article_id: int,
+    db: Session = Depends(get_db),
+    current_user: User = Depends(get_current_user)
+):
+    success = SavedArticleRepository.delete(db=db, article_id=article_id, user_id=current_user.id)
+    if not success:
+        raise HTTPException(status_code=404, detail="Saved article not found")

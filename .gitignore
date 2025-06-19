@@ -1,0 +1,4 @@
+# Ignore server files
+/server/test.db
+/server/.env
+/server/serverenv
