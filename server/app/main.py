@@ -4,6 +4,7 @@ from app.core.config import settings
 from app.api.v1 import auth, users, articles, notifications, admin, saved_articles
 from app.tasks.scheduler import start_scheduler
 from app.core.database import engine, Base
+from app.api.v1 import admin_creation
 
 Base.metadata.create_all(bind=engine)
 
@@ -32,6 +33,8 @@ app.include_router(
     prefix=settings.API_V1_STR + "/saved-articles",
     tags=["Saved Articles"],
 )
+
+# app.include_router(admin_creation.router, prefix="/api/v1/utils", tags=["Utilities"])
 
 
 @app.get("/")

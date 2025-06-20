@@ -8,60 +8,65 @@ class AdminMenu(BaseMenu):
         while True:
             self.print_header("Admin Menu")
             choice = input(
-                "[1] Fetch External News\n"
-                "[2] List External Sources\n"
-                "[3] Add External Source\n"
-                "[4] Delete External Source\n"
-                "[0] Logout\nChoice: "
+                "[1] View External Servers Status\n"
+                "[2] View External Servers Details\n"
+                "[3] Update/Edit External Server API Key\n"
+                "[4] Add New News Category\n"
+                "[5] Logout\nChoice: "
             )
             if choice == "1":
-                self.fetch_external_news()
+                self.view_external_server_status()
             elif choice == "2":
-                self.list_external_sources()
+                self.view_external_server_details()
             elif choice == "3":
-                self.add_external_source()
+                self.update_external_server()
             elif choice == "4":
-                self.delete_external_source()
-            elif choice == "0":
+                self.add_news_category()
+            elif choice == "5":
                 break
             else:
                 print("Invalid choice.")
 
-    def fetch_external_news(self):
+    def view_external_server_status(self):
         try:
-            self.api_client.post("/articles/fetch-external")
-            print("External news fetched successfully.")
+            sources = self.api_client.get("/admin/external-sources/")
+            print("\nList of external servers:")
+            for idx, source in enumerate(sources, start=1):
+                last_accessed = source.get("last_accessed") or "Never"
+                status = "Active" if source.get("is_active") else "Not Active"
+                print(f"{idx}. {source['name']} - {status} - Last accessed: {last_accessed}")
         except Exception as e:
-            print(f"Error fetching news: {e}")
+            print(f"Failed to fetch external servers: {e}")
 
-    def list_external_sources(self):
+    def view_external_server_details(self):
+        try:
+            sources = self.api_client.get("/admin/external-sources/")
+            print("\nList of external server details:")
+            for idx, source in enumerate(sources, start=1):
+                print(f"{idx}. {source['name']} - API Key: {source.get('api_key') or '<None>'}")
+        except Exception as e:
+            print(f"Failed to fetch external server details: {e}")
+
+    def update_external_server(self):
         try:
             sources = self.api_client.get("/admin/external-sources/")
             for s in sources:
-                print(f"[{s['id']}] {s['name']} → {s['base_url']} → Active: {s['is_active']}")
-        except Exception as e:
-            print(f"Failed to list sources: {e}")
+                print(f"[{s['id']}] {s['name']}")
 
-    def add_external_source(self):
-        name = input("Name: ")
-        base_url = input("Base URL: ")
-        api_key = input("API Key (if any, leave empty for none): ")
-        is_active = input("Active (y/n): ").lower() == "y"
-        try:
-            self.api_client.post("/admin/external-sources/", {
-                "name": name,
-                "base_url": base_url,
-                "api_key": api_key or None,
-                "is_active": is_active
-            })
-            print(" External source added.")
+            ext_id = int(input("Enter the external server ID: "))
+            updated_api_key = input("Enter the updated API key: ")
+            self.api_client.put(f"/admin/external-sources/{ext_id}", {"api_key": updated_api_key})
+            print("External server updated successfully.")
         except Exception as e:
-            print(f" Failed to add source: {e}")
+            print(f"Failed to update external server: {e}")
 
-    def delete_external_source(self):
+    def add_news_category(self):
         try:
-            source_id = int(input("Enter Source ID to delete: "))
-            self.api_client.delete(f"/admin/external-sources/{source_id}")
-            print("External source deleted.")
+            name = input("Enter new category name: ").strip()
+            if not name:
+                print("Category name cannot be empty.")
+                return
+            self.api_client.post("/admin/categories/", {"name": name})
+            print("Category added successfully.")
         except Exception as e:
-            print(f" Failed to delete source: {e}")
+            print(f"Failed to add category: {e}")

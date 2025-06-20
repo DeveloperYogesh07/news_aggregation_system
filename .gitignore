@@ -2,3 +2,9 @@
 /server/test.db
 /server/.env
 /server/serverenv
+
+__pycache__/
+*/server/.pyc
+*/server/.pyo
+*/server/.pyd
+
