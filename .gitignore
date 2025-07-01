@@ -4,7 +4,7 @@
 /server/serverenv
 
 __pycache__/
-*/server/.pyc
-*/server/.pyo
-*/server/.pyd
+.pyc
+.pyo
+.pyd
 

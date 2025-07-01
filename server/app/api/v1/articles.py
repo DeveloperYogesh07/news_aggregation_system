@@ -27,3 +27,12 @@ def fetch_external_news(category: str = None, db: Session = Depends(get_db), cur
     service = NewsService(db)
     service.fetch_and_store_top_headlines(category=category)
     return {"message": "News fetched and stored"}
+
+
+# @router.get("/search/", response_model=List[ArticleRead])
+# def search_articles(
+#     query: str,
+#     db: Session = Depends(get_db)
+# ):
+#     return ArticleRepository.search(db=db, query=query)
+

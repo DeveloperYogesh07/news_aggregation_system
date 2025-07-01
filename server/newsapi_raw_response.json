@@ -1,58 +1,32 @@
 {
   "status": "ok",
-  "totalResults": 34,
+  "totalResults": 35,
   "articles": [
     {
       "source": {
-        "id": "the-washington-post",
-        "name": "The Washington Post"
+        "id": null,
+        "name": "Financial Times"
       },
-      "author": "Emily Heil",
-      "title": "After Anne Burrell\u2019s sudden death, fellow TV chefs share tributes - The Washington Post",
-      "description": "Anne Burrell\u2019s Food Network colleagues remembered the spiky-haired chef in emotional online posts.",
-      "url": "https://www.washingtonpost.com/food/2025/06/18/anne-burrell-death-food-network-chefs/",
-      "urlToImage": "https://www.washingtonpost.com/wp-apps/imrs.php?src=https://arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/MBUA5A57IC67U32GUHLPQG7HEE.jpg&w=1440",
-      "publishedAt": "2025-06-18T20:25:08Z",
-      "content": "For two decades, Anne Burrell was a staple on Food Network, where she hosted, cooked and judged culinary competitions, sharing her exacting techniques and blunt persona with audiences and co-stars. A\u2026 [+3263 chars]"
-    },
-    {
-      "source": {
-        "id": "the-washington-post",
-        "name": "The Washington Post"
-      },
-      "author": "Amaya Verde",
-      "title": "Mapping strikes in the Israel-Iran conflict - The Washington Post",
-      "description": "See what sites Iran and Israel have hit in their escalating direct conflict.",
-      "url": "https://www.washingtonpost.com/world/2025/06/18/israel-iran-maps-strikes/",
-      "urlToImage": "https://www.washingtonpost.com/wp-apps/imrs.php?src=https://arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/PVGNK4IMDZDGVK6DQ6MPHW6INE.jpg&w=1440",
-      "publishedAt": "2025-06-18T19:49:26Z",
-      "content": "Airstrikes continued for a sixth day Wednesday amid the most intense faceoff in the history of the Israel-Iran conflict.\r\nThe confrontation that began Friday, when Israel launched an air campaign tar\u2026 [+2795 chars]"
+      "author": "Sarah Provan, Philip Georgiadis, William Sandlund",
+      "title": "Israel-Iran latest: Vladimir Putin says solution to conflict is up to Iran and Israel - Financial Times",
+      "description": null,
+      "url": "https://www.ft.com/content/f25e90af-f621-4583-b826-2aff1f53dc0f",
+      "urlToImage": "https://www.ft.com/__origami/service/image/v2/images/raw/https%3A%2F%2Fd1e00ek4ebabms.cloudfront.net%2Fproduction%2F89bd7bf2-a559-40eb-9c11-d383f0fa5e53.jpg?source=next-barrier-page",
+      "publishedAt": "2025-06-19T05:13:57Z",
+      "content": "Complete digital access to quality analysis and expert insights, complemented with our award-winning Weekend Print edition.\r\n<ul><li></li>Everything in Print<li></li>Weekday Print Edition<li></li>FT \u2026 [+202 chars]"
     },
     {
       "source": {
         "id": null,
-        "name": "CNBC"
+        "name": "New York Post"
       },
-      "author": "Darla Mercado, CFP\u00ae",
-      "title": "Fed decision recap: Central bank signals stagflation fears, Powell says Fed \u2018well positioned to wait\u2019 on rates - CNBC",
-      "description": "Policymakers kept interest rates are their target range of 4.25% to 4.5%, as expected. However, they see higher inflation and lower economic growth.",
-      "url": "https://www.cnbc.com/2025/06/18/fed-meeting-live-updates-feds-interest-rate-projections-loom.html",
-      "urlToImage": "https://image.cnbcfm.com/api/v1/image/108142445-1746644520006-gettyimages-2213286758-POWELL_FOMC.jpeg?v=1750186930&w=1920&h=1080",
-      "publishedAt": "2025-06-18T19:31:00Z",
-      "content": "The Federal Reserve is largely expected to stay put on interest rates, maintaining them at a target range of 4.25% to 4.5%, which is where they've been since December.\r\nEven as rates are off their hi\u2026 [+912 chars]"
-    },
-    {
-      "source": {
-        "id": "abc-news",
-        "name": "ABC News"
-      },
-      "author": "ABC News",
-      "title": "Karen Read found not guilty of murder in retrial on police officer boyfriend's death - ABC News",
-      "description": null,
-      "url": "https://abcnews.go.com/US/karen-read-retrial-verdict/story?id\\\\u003d122895647",
-      "urlToImage": null,
-      "publishedAt": "2025-06-18T19:30:00Z",
-      "content": null
+      "author": "Mitch Fink",
+      "title": "Meet Mark Walter, the billionaire who agreed to buy Lakers in historic $10B deal - New York Post",
+      "description": "After shelling out a record-breaking sum of approximately $10 billion, Mark Walter is soon to be the new owner of the Lakers.",
+      "url": "https://nypost.com/2025/06/18/sports/meet-mark-walter-the-billionaire-who-agreed-to-buy-the-lakers/",
+      "urlToImage": "https://nypost.com/wp-content/uploads/sites/2/2025/06/newspress-collage-7vjxg1pco-1750303605602.jpg?quality=75&strip=all&1750289275&w=1024",
+      "publishedAt": "2025-06-19T03:40:00Z",
+      "content": "After shelling out a record-breaking sum of approximately $10 billion, Mark Walter is soon to be the new owner of the Lakers.\r\nThe 65-year-old Walter, a businessman with a net worth of $12.5 billion,\u2026 [+2661 chars]"
     },
     {
       "source": {
@@ -60,77 +34,77 @@
         "name": "Associated Press"
       },
       "author": null,
-      "title": "Medicare and Social Security go-broke dates pushed up due to rising health care costs, new SSA law - AP News",
-      "description": "The go-broke dates for Medicare and Social Security\u2019s trust funds have moved up as rising health care costs and new legislation affecting Social Security benefits have contributed to closer projected depletion dates. That's according to an annual report relea\u2026",
-      "url": "https://apnews.com/article/social-security-medicare-trust-fund-trump-74e13292f510739724a555d7ded7c1a3",
-      "urlToImage": "https://dims.apnews.com/dims4/default/61fb073/2147483647/strip/true/crop/6187x3480+0+322/resize/1440x810!/quality/90/?url=https%3A%2F%2Fassets.apnews.com%2Fca%2Ff3%2F49d0fa15dbadb51c2353c5207f4d%2Fa28235468e2041a5b5bd9bf8df5f87d1",
-      "publishedAt": "2025-06-18T19:27:00Z",
-      "content": "WASHINGTON (AP) The go-broke dates for Medicare and Social Security s trust funds have moved up as rising health care costs and new legislation affecting Social Security benefits have contributed to \u2026 [+5721 chars]"
+      "title": "US resumes visas for foreign students but demands access to social media accounts - AP News",
+      "description": "The U.S. State Department says it\u2019s restarting the suspended process for foreigners applying for student visas but says all applicants will now be required to unlock their social media accounts for review. The department says consular officers will be on the \u2026",
+      "url": "https://apnews.com/article/student-visas-trump-social-media-6632a2c585245edcd6a63594345dd8c7",
+      "urlToImage": "https://dims.apnews.com/dims4/default/c4db25b/2147483647/strip/true/crop/3000x1688+0+156/resize/1440x810!/quality/90/?url=https%3A%2F%2Fassets.apnews.com%2Fa8%2Fcb%2F370ade1d2a78a955c340e12c247e%2Faba8f400e5564b35a7391e5d1f897ca7",
+      "publishedAt": "2025-06-19T03:22:00Z",
+      "content": "WASHINGTON (AP) The U.S. State Department said Wednesday it is restarting the suspended process for foreigners applying for student visas but all applicants will now be required to unlock their socia\u2026 [+4588 chars]"
+    },
+    {
+      "source": {
+        "id": "nbc-news",
+        "name": "NBC News"
+      },
+      "author": "Alicia Victoria Lozano",
+      "title": "Salt Lake City volunteer's account of deadly shooting questioned after new video emerges - NBC News",
+      "description": "A new picture of the Salt Lake City protester arrested in a deadly \u201cNo Kings\u201d shooting is emerging, and it is different from the one safety volunteers at the event provided to officials.",
+      "url": "https://www.nbcnews.com/news/us-news/salt-lake-city-volunteers-account-deadly-shooting-questioned-new-video-rcna213871",
+      "urlToImage": "https://media-cldnry.s-nbcnews.com/image/upload/t_nbcnews-fp-1200-630,f_auto,q_auto:best/rockcms/2025-06/250618-Salt-Lake-City-memorial-ew-656p-6c76ec.jpg",
+      "publishedAt": "2025-06-19T02:21:00Z",
+      "content": "A new picture of the Salt Lake City protester arrested in a deadly No Kings shooting is emerging, and it is different from the one safety volunteers at the event provided to officials. \r\nArturo Gambo\u2026 [+4758 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "BBC News"
+      },
+      "author": null,
+      "title": "Texas Instruments to make 'historic' $60bn US chip investment - BBC",
+      "description": "The announcement comes as Trump pressures big technology firms to increase manufacturing in America.",
+      "url": "https://www.bbc.com/news/articles/c5yl0877zzmo",
+      "urlToImage": "https://ichef.bbci.co.uk/news/1024/branded_news/097b/live/cfefd460-4cb8-11f0-ba4c-7f16eba7c93a.jpg",
+      "publishedAt": "2025-06-19T02:19:57Z",
+      "content": "Computer chip giant Texas Instruments (TI) will invest more than $60bn (\u00a344.74bn) in the US, as President Donald Trump pressures big technology firms to increase manufacturing in the country.\r\nThe co\u2026 [+1853 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "CNBC"
+      },
+      "author": "Lim Hui Jie",
+      "title": "Israeli president denies pursuing regime change in Iran \u2014 goal is to 'remove' nuclear program - CNBC",
+      "description": "Herzog accused Teheran of \"cheating,\" saying that the country was \"rushing to the bomb.\"",
+      "url": "https://www.cnbc.com/2025/06/19/israeli-president-denies-pursuing-regime-change-in-iran.html",
+      "urlToImage": "https://image.cnbcfm.com/api/v1/image/108161405-1750292840488-gettyimages-2214121401-_k_12139-ss.jpeg?v=1750292861&w=1920&h=1080",
+      "publishedAt": "2025-06-19T02:13:00Z",
+      "content": "Israeli President Isaac Herzog said Wednesday that his country was not pursuing regime change in Iran, and its attack on Tehran was aimed at eliminating its nuclear capabilities.\r\nSpeaking to CNBC's \u2026 [+2107 chars]"
     },
     {
       "source": {
         "id": "politico",
         "name": "Politico"
       },
-      "author": "Nahal Toosi, Eric Bazail-Eimil",
-      "title": "State Department unveils social media screening rules for all student visa applicants - Politico",
-      "description": "Applicants will be vetted for \u201cany indications of hostility towards the citizens, culture, government, institutions or founding principles of the United States.\u201d",
-      "url": "https://www.politico.com/news/2025/06/18/social-media-screening-student-visas-00413160",
-      "urlToImage": "https://static.politico.com/cc/0f/3d54684c46eaaf71179b83b842f9/columbia-university-commencement-27136.jpg",
-      "publishedAt": "2025-06-18T19:23:56Z",
-      "content": "The cable appears to be the latest salvo in the Trump administrations efforts to punish American colleges and universities for their handling of pro-Palestinian protests on campus and root out what i\u2026 [+2510 chars]"
-    },
-    {
-      "source": {
-        "id": "associated-press",
-        "name": "Associated Press"
-      },
-      "author": null,
-      "title": "Marina Mabrey\u2019s foul on Caitlin Clark upgraded to Flagrant-2, AP source says - AP News",
-      "description": "The WNBA has upgraded the technical foul on Connecticut\u2019s Marina Mabrey for shoving Caitlin Clark to the floor during Tuesday\u2019s night game against Indiana to a Flagrant-2. That's according to a person familiar with the situation who spoke to The Associated Pr\u2026",
-      "url": "https://apnews.com/article/marina-mabrey-caitlin-clark-flagrant-foul-wnba-e92533249b07611837d41714efbc1444",
-      "urlToImage": "https://dims.apnews.com/dims4/default/96e11f0/2147483647/strip/true/crop/6703x3770+0+349/resize/1440x810!/quality/90/?url=https%3A%2F%2Fassets.apnews.com%2F23%2F3d%2Fad8a8153e46fcfb2809ec932c813%2F340a9f9c214147ce91fb28e18dfeae17",
-      "publishedAt": "2025-06-18T18:56:00Z",
-      "content": "The WNBA has upgraded the technical foul on Connecticuts Marina Mabrey for shoving Caitlin Clark to the floor during Tuesdays night game against Indiana to a Flagrant-2, a person familiar with the si\u2026 [+1625 chars]"
-    },
-    {
-      "source": {
-        "id": "the-washington-post",
-        "name": "The Washington Post"
-      },
-      "author": "Ann E. Marimow, Casey Parks",
-      "title": "Supreme Court allows Tennessee ban on gender-transition care for minors - The Washington Post",
-      "description": "The court\u2019s decision affects the law in Tennessee and has implications for the 23 other states that have banned similar treatments in recent years.",
-      "url": "https://www.washingtonpost.com/politics/2025/06/18/supreme-court-transgender-transition-care-tennessee/",
-      "urlToImage": "https://www.washingtonpost.com/wp-apps/imrs.php?src=https://arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/7MJRBA2GU4GJH53E6ROW72N5KE_size-normalized.jpg&w=1440",
-      "publishedAt": "2025-06-18T18:40:32Z",
-      "content": "A divided Supreme Court on Wednesday cleared the way for states to ban certain gender transition treatments for minors, a landmark decision on a polarizing issue the Trump administration has seized o\u2026 [+9585 chars]"
+      "author": "Jasper Goodman",
+      "title": "Trump calls on House GOP to quickly adopt \u2018clean\u2019 version of Senate-passed crypto bill - Politico",
+      "description": "House Republicans are weighing how much to change the Senate bill and whether to include it in a larger package of crypto legislation.",
+      "url": "https://www.politico.com/live-updates/2025/06/18/congress/trump-calls-on-house-gop-to-quickly-adopt-clean-version-of-senate-passed-crypto-bill-00414161",
+      "urlToImage": "https://www.politico.com/dims4/default/6b92a4c/2147483647/resize/1200x/quality/90/?url=https%3A%2F%2Fstatic.politico.com%2F1b%2F9b%2F629a6918428bad70205db67785f1%2Ftrump-crypto-dinner-47871.jpg",
+      "publishedAt": "2025-06-19T01:38:29Z",
+      "content": null
     },
     {
       "source": {
         "id": null,
-        "name": "CNBC"
+        "name": "The Spun"
       },
-      "author": "Yun Li",
-      "title": "Fed sees its preferred inflation gauge topping 3% this year, higher than previous forecast - CNBC",
-      "description": "FOMC officials expect the core personal\u00a0consumption expenditures price index, which excludes food and energy, to increase at a 3.1% rate in 2025.",
-      "url": "https://www.cnbc.com/2025/06/18/federal-reserve-dot-plot-and-economic-projection-june-2025.html",
-      "urlToImage": "https://image.cnbcfm.com/api/v1/image/108153395-1748884843646-gettyimages-2217693990-AFP_48XY8BJ.jpeg?v=1750264409&w=1920&h=1080",
-      "publishedAt": "2025-06-18T18:39:32Z",
-      "content": "The Federal Reserve sees inflation rising again to top 3% this year amid the uncertainty around President Donald Trump's trade policies and intensifying geopolitical risk.\r\nFederal Open Market Commit\u2026 [+2151 chars]"
-    },
-    {
-      "source": {
-        "id": null,
-        "name": "TMZ"
-      },
-      "author": "TMZ Staff",
-      "title": "'16 & Pregnant' Star Whitney Purvis Breaks Silence on Missing Son's Funeral - TMZ",
-      "description": "Whitney Purvis is breaking her silence after being denied entry to her son\u2019s funeral over the weekend -- claiming she was intentionally kept out and is now setting the record straight.",
-      "url": "https://www.tmz.com/2025/06/18/16-and-pregnant-star-whitney-purvis-breaks-silence-missing-sons-funeral/",
-      "urlToImage": "https://imagez.tmz.com/image/46/16by9/2025/06/18/4614ac8001684ac69c5e5f0d51170d86_xl.jpg",
-      "publishedAt": "2025-06-18T18:35:05Z",
-      "content": "Whitney Purvis is breaking her silence after being denied entry to her sons funeral over the weekend -- claiming she was intentionally kept out and is now setting the record straight.\r\nThe former \"16\u2026 [+2322 chars]"
+      "author": "Andrew Holleran",
+      "title": "There's Growing Push For Caitlin Clark To Leave The WNBA - Yahoo Sports",
+      "description": "There's a growing push for Caitlin Clark to \"leave\" the WNBA following Tuesday night's incident. Clark, the No. 1 overall pick in the 2024 WNBA Draft, was...",
+      "url": "https://thespun.com/wnba/theres-growing-push-for-caitlin-clark-to-leave-the-wnba",
+      "urlToImage": "https://media.zenfs.com/en/the_spun_articles_751/bf4fd19b1e88153ebc5cecfb1ed6814c",
+      "publishedAt": "2025-06-19T01:36:12Z",
+      "content": "There's Growing Push For Caitlin Clark To Leave The WNBA originally appeared on The Spun.\r\nThere's a growing push for Caitlin Clark to \"leave\" the WNBA following Tuesday night's incident.\r\nClark, the\u2026 [+2651 chars]"
     }
   ]
 }

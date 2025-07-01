@@ -27,46 +27,51 @@ class AdminMenu(BaseMenu):
             else:
                 print("Invalid choice.")
 
-    def view_external_server_status(self):
+def view_external_server_status(self):
         try:
-            sources = self.api_client.get("/admin/external-sources/")
-            print("\nList of external servers:")
-            for idx, source in enumerate(sources, start=1):
-                last_accessed = source.get("last_accessed") or "Never"
-                status = "Active" if source.get("is_active") else "Not Active"
-                print(f"{idx}. {source['name']} - {status} - Last accessed: {last_accessed}")
+            result = self.api_client.get("/admin/external-sources/status")
+            if "error" in result:
+                print(result["error"])
+            else:
+                servers = result.get("servers", [])
+                for server in servers:
+                    print(f"{server['name']} - {'Active' if server.get('is_active') else 'Not Active'} - Last accessed: {server.get('last_accessed') or 'Never'}")
         except Exception as e:
-            print(f"Failed to fetch external servers: {e}")
+            print({"error": f"Failed to fetch external servers: {e}"})
+        input("Press Enter to continue...")
 
-    def view_external_server_details(self):
-        try:
-            sources = self.api_client.get("/admin/external-sources/")
-            print("\nList of external server details:")
-            for idx, source in enumerate(sources, start=1):
-                print(f"{idx}. {source['name']} - API Key: {source.get('api_key') or '<None>'}")
-        except Exception as e:
-            print(f"Failed to fetch external server details: {e}")
+def view_external_server_details(self):
+    """Display external servers details (logic same as AdminInterface.show_server_details)"""
+    try:
+        result = self.api_client.get("/admin/external-sources/details")
+        if "error" in result:
+            print(result["error"])
+        else:
+            details = result.get("details", [])
+            for detail in details:
+                print(f"{detail['name']} - API Key: {detail.get('api_key') or '<None>'}")
+    except Exception as e:
+        print({"error": f"Failed to fetch external server details: {e}"})
+    input("Press Enter to continue...")
 
-    def update_external_server(self):
-        try:
-            sources = self.api_client.get("/admin/external-sources/")
-            for s in sources:
-                print(f"[{s['id']}] {s['name']}")
+def update_external_server(self):
+    """Update external server API key (logic same as AdminInterface.handle_update_server)"""
+    try:
+        server_id = input("Enter server ID: ")
+        api_key = input("Enter updated API key: ")
+        result = self.api_client.put(f"/admin/external-sources/{server_id}", {"api_key": api_key})
+        print(result)
+    except Exception as e:
+        print({"error": f"Failed to update external server: {e}"})
+    input("Press Enter to continue...")
 
-            ext_id = int(input("Enter the external server ID: "))
-            updated_api_key = input("Enter the updated API key: ")
-            self.api_client.put(f"/admin/external-sources/{ext_id}", {"api_key": updated_api_key})
-            print("External server updated successfully.")
-        except Exception as e:
-            print(f"Failed to update external server: {e}")
+def add_news_category(self):
+    """Add new category (logic same as AdminInterface.handle_add_category)"""
+    try:
+        name = input("Enter new category name: ").strip()
+        result = self.api_client.post("/admin/categories/", {"name": name})
+        print(result)
+    except Exception as e:
+        print({"error": f"Failed to add category: {e}"})
+    input("Press Enter to continue...")
 
-    def add_news_category(self):
-        try:
-            name = input("Enter new category name: ").strip()
-            if not name:
-                print("Category name cannot be empty.")
-                return
-            self.api_client.post("/admin/categories/", {"name": name})
-            print("Category added successfully.")
-        except Exception as e:
-            print(f"Failed to add category: {e}")

@@ -18,3 +18,12 @@ class ArticleRepository:
     @staticmethod
     def get_by_id(db: Session, article_id: int):
         return db.query(Article).filter(Article.id == article_id).first()
+
+    # @staticmethod
+    # def search(db: Session, query: str):
+    #     return db.query(Article).filter(
+    #         or_(
+    #             Article.title.ilike(f"%{query}%"),
+    #             Article.content.ilike(f"%{query}%")
+    #         )
+    #     ).order_by(Article.created_at.desc()).all()
