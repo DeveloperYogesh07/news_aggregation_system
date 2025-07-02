@@ -33,7 +33,7 @@ app.include_router(
     tags=["Saved Articles"],
 )
 
-# app.include_router(admin_creation.router, prefix="/api/v1/utils", tags=["Utilities"])
+app.include_router(admin_creation.router, prefix="/api/v1/utils", tags=["Utilities"])
 
 
 @app.get("/")

@@ -17,10 +17,12 @@ def create_saved_article(
     return SavedArticleRepository.create(
         db=db,
         user_id=current_user.id,
+        article_id=article_in.article_id,  
         title=article_in.title,
-        content=article_in.content,
+        content=article_in.content or "",
         url=str(article_in.url) if article_in.url else None
     )
+
 
 @router.get("/", response_model=list[SavedArticleRead])
 def list_saved_articles(

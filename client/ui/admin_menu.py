@@ -1,7 +1,10 @@
+import requests
 from ui.base_menu import BaseMenu
+from datetime import datetime
 
 class AdminMenu(BaseMenu):
     def __init__(self, api_client):
+        super().__init__()
         self.api_client = api_client
 
     def show(self):
@@ -23,55 +26,80 @@ class AdminMenu(BaseMenu):
             elif choice == "4":
                 self.add_news_category()
             elif choice == "5":
+                print("Logging out...")
                 break
             else:
-                print("Invalid choice.")
+                print("Invalid choice. Please try again.")
 
-def view_external_server_status(self):
+    def view_external_server_status(self):
         try:
-            result = self.api_client.get("/admin/external-sources/status")
+            result = self.api_client.get("/admin/external-sources")
             if "error" in result:
                 print(result["error"])
             else:
-                servers = result.get("servers", [])
-                for server in servers:
-                    print(f"{server['name']} - {'Active' if server.get('is_active') else 'Not Active'} - Last accessed: {server.get('last_accessed') or 'Never'}")
+                # servers = result.get("servers", [])
+                print("\nExternal Server Status:")
+                for server in result:
+                    name = server["name"]
+                    status = "Active" if server.get("is_active") else "Not Active"
+                    last_accessed = server.get("last_accessed")
+                    if last_accessed:
+                        try:
+                            last_accessed = datetime.fromisoformat(last_accessed).strftime("%Y-%m-%d %H:%M")
+                        except Exception:
+                            pass
+                    else:
+                        last_accessed = "Never"
+
+                    print(f"- {name}: {status} - Last accessed: {last_accessed}")
         except Exception as e:
-            print({"error": f"Failed to fetch external servers: {e}"})
-        input("Press Enter to continue...")
+            print(f"Failed to fetch external servers: {e}")
+        input("\nPress Enter to continue...")
 
-def view_external_server_details(self):
-    """Display external servers details (logic same as AdminInterface.show_server_details)"""
-    try:
-        result = self.api_client.get("/admin/external-sources/details")
-        if "error" in result:
-            print(result["error"])
-        else:
-            details = result.get("details", [])
-            for detail in details:
-                print(f"{detail['name']} - API Key: {detail.get('api_key') or '<None>'}")
-    except Exception as e:
-        print({"error": f"Failed to fetch external server details: {e}"})
-    input("Press Enter to continue...")
+    def view_external_server_details(self):
+        try:
+            result = self.api_client.get("/admin/external-sources")
+            if "error" in result:
+                print(result["error"])
+            else:
+                # details = result.get("details", [])
+                print("\nExternal Server Details:")
+                for detail in result:
+                    name = detail["name"]
+                    api_key = detail.get("api_key") or "<None>"
+                    print(f"- {name}: API Key: {api_key}")
+        except Exception as e:
+            print(f"Failed to fetch external server details: {e}")
+        input("\nPress Enter to continue...")
 
-def update_external_server(self):
-    """Update external server API key (logic same as AdminInterface.handle_update_server)"""
-    try:
-        server_id = input("Enter server ID: ")
-        api_key = input("Enter updated API key: ")
-        result = self.api_client.put(f"/admin/external-sources/{server_id}", {"api_key": api_key})
-        print(result)
-    except Exception as e:
-        print({"error": f"Failed to update external server: {e}"})
-    input("Press Enter to continue...")
+    def update_external_server(self):
+        try:
+            server_id = input("Enter server ID: ").strip()
+            api_key = input("Enter updated API key: ").strip()
+            result = self.api_client.put(f"/admin/external-sources/{server_id}", {"api_key": api_key})
+            if "error" in result:
+                print(result["error"])
+            else:
+                print("API key updated successfully.")
+        except Exception as e:
+            print(f"Failed to update external server: {e}")
+        input("\nPress Enter to continue...")
 
-def add_news_category(self):
-    """Add new category (logic same as AdminInterface.handle_add_category)"""
-    try:
-        name = input("Enter new category name: ").strip()
-        result = self.api_client.post("/admin/categories/", {"name": name})
-        print(result)
-    except Exception as e:
-        print({"error": f"Failed to add category: {e}"})
-    input("Press Enter to continue...")
+    def add_news_category(self):
+        try:
+            name = input("Enter new category name: ").strip()
+            if not name:
+                print("Category name cannot be empty.")
+                return
+            result = self.api_client.post("/admin/categories/", {"name": name})
+            print("Category added successfully.")
+        except requests.exceptions.HTTPError as http_err:
+            try:
+                error_response = http_err.response.json()
+                print(f"Failed to add category: {error_response.get('detail')}")
+            except Exception:
+                print(f"Failed to add category: {http_err}")
+        except Exception as e:
+            print(f"Unexpected error: {e}")
+        input("\nPress Enter to continue...")
 

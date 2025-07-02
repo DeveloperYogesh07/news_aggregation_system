@@ -1,32 +1,45 @@
 {
   "status": "ok",
-  "totalResults": 35,
+  "totalResults": 34,
   "articles": [
     {
       "source": {
-        "id": null,
-        "name": "Financial Times"
+        "id": "nbc-news",
+        "name": "NBC News"
       },
-      "author": "Sarah Provan, Philip Georgiadis, William Sandlund",
-      "title": "Israel-Iran latest: Vladimir Putin says solution to conflict is up to Iran and Israel - Financial Times",
-      "description": null,
-      "url": "https://www.ft.com/content/f25e90af-f621-4583-b826-2aff1f53dc0f",
-      "urlToImage": "https://www.ft.com/__origami/service/image/v2/images/raw/https%3A%2F%2Fd1e00ek4ebabms.cloudfront.net%2Fproduction%2F89bd7bf2-a559-40eb-9c11-d383f0fa5e53.jpg?source=next-barrier-page",
-      "publishedAt": "2025-06-19T05:13:57Z",
-      "content": "Complete digital access to quality analysis and expert insights, complemented with our award-winning Weekend Print edition.\r\n<ul><li></li>Everything in Print<li></li>Weekday Print Edition<li></li>FT \u2026 [+202 chars]"
+      "author": "Astha Rajvanshi",
+      "title": "More than 150 groups call for U.S. and Israeli-backed Gaza aid distribution to be shut down - NBC News",
+      "description": "Charity and aid groups said in a joint statement that more than 500 Palestinians had been killed and almost 4,000 injured in less than four weeks while trying to access or distribute food in Gaza.",
+      "url": "https://www.nbcnews.com/world/gaza/150-groups-call-us-israeli-backed-gaza-aid-distribution-shut-rcna212270",
+      "urlToImage": "https://media-cldnry.s-nbcnews.com/image/upload/t_nbcnews-fp-1200-630,f_auto,q_auto:best/rockcms/2025-07/250701-gaza-9-rs-0e7e1f.jpg",
+      "publishedAt": "2025-07-01T11:06:15Z",
+      "content": "Calling the humanitarian aid distribution centers death traps, the Palestinian Health Ministry said in a statement Tuesday that 583 people had died since GHF first began operating in Gaza in late May\u2026 [+3210 chars]"
     },
     {
       "source": {
-        "id": null,
-        "name": "New York Post"
+        "id": "the-wall-street-journal",
+        "name": "The Wall Street Journal"
       },
-      "author": "Mitch Fink",
-      "title": "Meet Mark Walter, the billionaire who agreed to buy Lakers in historic $10B deal - New York Post",
-      "description": "After shelling out a record-breaking sum of approximately $10 billion, Mark Walter is soon to be the new owner of the Lakers.",
-      "url": "https://nypost.com/2025/06/18/sports/meet-mark-walter-the-billionaire-who-agreed-to-buy-the-lakers/",
-      "urlToImage": "https://nypost.com/wp-content/uploads/sites/2/2025/06/newspress-collage-7vjxg1pco-1750303605602.jpg?quality=75&strip=all&1750289275&w=1024",
-      "publishedAt": "2025-06-19T03:40:00Z",
-      "content": "After shelling out a record-breaking sum of approximately $10 billion, Mark Walter is soon to be the new owner of the Lakers.\r\nThe 65-year-old Walter, a businessman with a net worth of $12.5 billion,\u2026 [+2661 chars]"
+      "author": "WSJ",
+      "title": "Exclusive | Meet the Highest Paid Information Technology Executives of 2024 - WSJ",
+      "description": null,
+      "url": "https://www.wsj.com/articles/meet-the-highest-paid-information-technology-executives-of-2024-ff831e7b",
+      "urlToImage": null,
+      "publishedAt": "2025-07-01T11:00:00Z",
+      "content": null
+    },
+    {
+      "source": {
+        "id": "axios",
+        "name": "Axios"
+      },
+      "author": "Ben Geman, Zachary Basu",
+      "title": "Trump's clean-energy grenade rattles high-tech industries - Axios",
+      "description": "Critics say Trump's megabill amounts an abject surrender in the battle for the future of energy.",
+      "url": "https://www.axios.com/2025/07/01/trump-clean-energy-tax-credits-renewables",
+      "urlToImage": "https://images.axios.com/4fjSVAVoIk2RVVSMUWZCGvexByg=/0x0:1280x720/1366x768/2025/06/30/1751324651153.jpg",
+      "publishedAt": "2025-07-01T09:55:24Z",
+      "content": "<ul><li>The \"One, Big, Beautiful Bill Act,\" which would gut key Biden-era clean energy subsidies and potentially impose new taxes on solar and wind projects, could reach Trump's desk as soon as this \u2026 [+5033 chars]"
     },
     {
       "source": {
@@ -34,77 +47,51 @@
         "name": "Associated Press"
       },
       "author": null,
-      "title": "US resumes visas for foreign students but demands access to social media accounts - AP News",
-      "description": "The U.S. State Department says it\u2019s restarting the suspended process for foreigners applying for student visas but says all applicants will now be required to unlock their social media accounts for review. The department says consular officers will be on the \u2026",
-      "url": "https://apnews.com/article/student-visas-trump-social-media-6632a2c585245edcd6a63594345dd8c7",
-      "urlToImage": "https://dims.apnews.com/dims4/default/c4db25b/2147483647/strip/true/crop/3000x1688+0+156/resize/1440x810!/quality/90/?url=https%3A%2F%2Fassets.apnews.com%2Fa8%2Fcb%2F370ade1d2a78a955c340e12c247e%2Faba8f400e5564b35a7391e5d1f897ca7",
-      "publishedAt": "2025-06-19T03:22:00Z",
-      "content": "WASHINGTON (AP) The U.S. State Department said Wednesday it is restarting the suspended process for foreigners applying for student visas but all applicants will now be required to unlock their socia\u2026 [+4588 chars]"
-    },
-    {
-      "source": {
-        "id": "nbc-news",
-        "name": "NBC News"
-      },
-      "author": "Alicia Victoria Lozano",
-      "title": "Salt Lake City volunteer's account of deadly shooting questioned after new video emerges - NBC News",
-      "description": "A new picture of the Salt Lake City protester arrested in a deadly \u201cNo Kings\u201d shooting is emerging, and it is different from the one safety volunteers at the event provided to officials.",
-      "url": "https://www.nbcnews.com/news/us-news/salt-lake-city-volunteers-account-deadly-shooting-questioned-new-video-rcna213871",
-      "urlToImage": "https://media-cldnry.s-nbcnews.com/image/upload/t_nbcnews-fp-1200-630,f_auto,q_auto:best/rockcms/2025-06/250618-Salt-Lake-City-memorial-ew-656p-6c76ec.jpg",
-      "publishedAt": "2025-06-19T02:21:00Z",
-      "content": "A new picture of the Salt Lake City protester arrested in a deadly No Kings shooting is emerging, and it is different from the one safety volunteers at the event provided to officials. \r\nArturo Gambo\u2026 [+4758 chars]"
-    },
-    {
-      "source": {
-        "id": null,
-        "name": "BBC News"
-      },
-      "author": null,
-      "title": "Texas Instruments to make 'historic' $60bn US chip investment - BBC",
-      "description": "The announcement comes as Trump pressures big technology firms to increase manufacturing in America.",
-      "url": "https://www.bbc.com/news/articles/c5yl0877zzmo",
-      "urlToImage": "https://ichef.bbci.co.uk/news/1024/branded_news/097b/live/cfefd460-4cb8-11f0-ba4c-7f16eba7c93a.jpg",
-      "publishedAt": "2025-06-19T02:19:57Z",
-      "content": "Computer chip giant Texas Instruments (TI) will invest more than $60bn (\u00a344.74bn) in the US, as President Donald Trump pressures big technology firms to increase manufacturing in the country.\r\nThe co\u2026 [+1853 chars]"
-    },
-    {
-      "source": {
-        "id": null,
-        "name": "CNBC"
-      },
-      "author": "Lim Hui Jie",
-      "title": "Israeli president denies pursuing regime change in Iran \u2014 goal is to 'remove' nuclear program - CNBC",
-      "description": "Herzog accused Teheran of \"cheating,\" saying that the country was \"rushing to the bomb.\"",
-      "url": "https://www.cnbc.com/2025/06/19/israeli-president-denies-pursuing-regime-change-in-iran.html",
-      "urlToImage": "https://image.cnbcfm.com/api/v1/image/108161405-1750292840488-gettyimages-2214121401-_k_12139-ss.jpeg?v=1750292861&w=1920&h=1080",
-      "publishedAt": "2025-06-19T02:13:00Z",
-      "content": "Israeli President Isaac Herzog said Wednesday that his country was not pursuing regime change in Iran, and its attack on Tehran was aimed at eliminating its nuclear capabilities.\r\nSpeaking to CNBC's \u2026 [+2107 chars]"
+      "title": "Court suspends Thailand's Prime Minister Paetongtarn Shinawatra to investigate leaked phone call - AP News",
+      "description": "Thailand\u2019s Constitutional Court has suspended Prime Minister Paetongtarn Shinawatra from office pending an investigation over a leaked phone call with a senior Cambodian leader. The judges voted unanimously Tuesday to take the petition accusing her of a breac\u2026",
+      "url": "https://apnews.com/article/thailand-cabinet-paetongtarn-leak-call-cambodia-f44701c7e21a99f894fa94981a79ee8d",
+      "urlToImage": "https://dims.apnews.com/dims4/default/af2b543/2147483647/strip/true/crop/5532x3112+0+288/resize/1440x810!/quality/90/?url=https%3A%2F%2Fassets.apnews.com%2Fed%2F1a%2F6c8936580c6aab252dadf4eb5c82%2F9ea377f6aa2d4947bacea20b2180168c",
+      "publishedAt": "2025-07-01T09:49:00Z",
+      "content": "BANGKOK (AP) Thailands Constitutional Court suspended Prime Minister Paetongtarn Shinawatra from office Tuesday pending an ethics investigation over a leaked phone call with a senior Cambodian leader\u2026 [+5353 chars]"
     },
     {
       "source": {
         "id": "politico",
         "name": "Politico"
       },
-      "author": "Jasper Goodman",
-      "title": "Trump calls on House GOP to quickly adopt \u2018clean\u2019 version of Senate-passed crypto bill - Politico",
-      "description": "House Republicans are weighing how much to change the Senate bill and whether to include it in a larger package of crypto legislation.",
-      "url": "https://www.politico.com/live-updates/2025/06/18/congress/trump-calls-on-house-gop-to-quickly-adopt-clean-version-of-senate-passed-crypto-bill-00414161",
-      "urlToImage": "https://www.politico.com/dims4/default/6b92a4c/2147483647/resize/1200x/quality/90/?url=https%3A%2F%2Fstatic.politico.com%2F1b%2F9b%2F629a6918428bad70205db67785f1%2Ftrump-crypto-dinner-47871.jpg",
-      "publishedAt": "2025-06-19T01:38:29Z",
+      "author": "Mia McCarthy, Jordain Carney, Lisa Kashinsky",
+      "title": "Capitol agenda: Lisa Murkowski slams the brakes on the GOP megabill - Politico",
+      "description": "The Alaska senator was the subject of an intense whip effort by GOP leaders overnight.",
+      "url": "https://www.politico.com/live-updates/2025/07/01/congress/murkowski-megabill-snap-thune-collins-00434739",
+      "urlToImage": "https://www.politico.com/dims4/default/01be9c8/2147483647/resize/1200x/quality/90/?url=https%3A%2F%2Fstatic.politico.com%2F21%2F01%2F3dee9b804779b468c67a77d42630%2Fu-s-congress-33105.jpg",
+      "publishedAt": "2025-07-01T09:06:54Z",
       "content": null
     },
     {
       "source": {
         "id": null,
-        "name": "The Spun"
+        "name": "NPR"
       },
-      "author": "Andrew Holleran",
-      "title": "There's Growing Push For Caitlin Clark To Leave The WNBA - Yahoo Sports",
-      "description": "There's a growing push for Caitlin Clark to \"leave\" the WNBA following Tuesday night's incident. Clark, the No. 1 overall pick in the 2024 WNBA Draft, was...",
-      "url": "https://thespun.com/wnba/theres-growing-push-for-caitlin-clark-to-leave-the-wnba",
-      "urlToImage": "https://media.zenfs.com/en/the_spun_articles_751/bf4fd19b1e88153ebc5cecfb1ed6814c",
-      "publishedAt": "2025-06-19T01:36:12Z",
-      "content": "There's Growing Push For Caitlin Clark To Leave The WNBA originally appeared on The Spun.\r\nThere's a growing push for Caitlin Clark to \"leave\" the WNBA following Tuesday night's incident.\r\nClark, the\u2026 [+2651 chars]"
+      "author": "",
+      "title": "Poll: Most feel democracy is threatened and political violence is a major problem - NPR",
+      "description": "76% of Americans think that democracy is under a serious threat, according to the latest NPR/PBS News/Marist poll. And their faith in political leadership in the White House and Congress is low.",
+      "url": "https://www.npr.org/2025/07/01/nx-s1-5452527/poll-democracy-trump-immigration",
+      "urlToImage": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/1024x576+0+54/resize/1400/quality/100/format/jpeg/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2Fae%2F85%2F9ab9af48489baea225cc1b8900d0%2Fgettyimages-2216185919.jpg",
+      "publishedAt": "2025-07-01T09:00:00Z",
+      "content": "Ahead of the July Fourth holiday and the country's 249th birthday, three-quarters of Americans say democracy is under serious threat, according to a new NPR/PBS News/Marist poll.\r\nNearly three-quarte\u2026 [+6190 chars]"
+    },
+    {
+      "source": {
+        "id": "nbc-news",
+        "name": "NBC News"
+      },
+      "author": "Shreya Srinivasan",
+      "title": "Can cheese turn your dreams into nightmares? - NBC News",
+      "description": "Dairy products might be meddling with your dreams: New research suggests that cheese before bed could lead to more intense nightmares, if you're lactose intolerant.",
+      "url": "https://www.nbcnews.com/health/health-news/can-cheese-turn-dreams-nightmares-rcna215580",
+      "urlToImage": "https://media-cldnry.s-nbcnews.com/image/upload/t_nbcnews-fp-1200-630,f_auto,q_auto:best/rockcms/2025-06/260630-cheese-nightmares-to-211743.jpg",
+      "publishedAt": "2025-07-01T09:00:00Z",
+      "content": "Dairy products might be meddling with your dreams. \r\nNew research published Tuesday in the journal Frontiers in Psychology surveyed sleep habits, particularly dreams, and compared them with peoples e\u2026 [+2869 chars]"
     }
   ]
 }

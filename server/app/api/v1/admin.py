@@ -2,7 +2,9 @@ from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 from app.core.database import get_db
 from app.services.external_source_service import ExternalSourceService
-from app.schemas.external_source import ExternalSourceCreate, ExternalSourceRead
+from app.schemas.external_source import ExternalSourceCreate, ExternalSourceRead, ExternalSourceUpdate
+from app.schemas.category import CategoryCreate, CategoryRead
+from app.services.category_service import CategoryService
 
 router = APIRouter()
 
@@ -23,3 +25,16 @@ def delete_external_source(source_id: int, db: Session = Depends(get_db)):
     if not source:
         raise HTTPException(status_code=404, detail="Source not found")
     return {"message": "Deleted"}
+
+@router.put("/external-sources/{source_id}", response_model=ExternalSourceRead)
+def update_external_source(source_id: int, data: ExternalSourceUpdate, db: Session = Depends(get_db)):
+    service = ExternalSourceService(db)
+    updated = service.update(source_id, data)
+    if not updated:
+        raise HTTPException(status_code=404, detail="Source not found")
+    return updated
+
+@router.post("/categories/", response_model=CategoryRead)
+def add_category(data: CategoryCreate, db: Session = Depends(get_db)):
+    service = CategoryService(db)
+    return service.create(data)

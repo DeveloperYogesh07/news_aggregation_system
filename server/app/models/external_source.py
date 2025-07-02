@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, Boolean
+from sqlalchemy import Column, Integer, String, Boolean, DateTime
 from app.core.database import Base
 
 class ExternalSource(Base):
@@ -9,3 +9,4 @@ class ExternalSource(Base):
     base_url = Column(String, nullable=False)
     api_key = Column(String, nullable=True)
     is_active = Column(Boolean, default=True)
+    last_accessed = Column(DateTime, nullable=True)

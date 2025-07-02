@@ -1,4 +1,6 @@
 from pydantic import BaseModel
+from typing import Optional
+from datetime import datetime
 
 class ExternalSourceBase(BaseModel):
     name: str
@@ -17,6 +19,7 @@ class ExternalSourceUpdate(BaseModel):
 
 class ExternalSourceRead(ExternalSourceBase):
     id: int
+    last_accessed: Optional[datetime]
 
     class Config:
         from_attributes = True
