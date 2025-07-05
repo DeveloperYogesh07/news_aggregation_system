@@ -4,12 +4,13 @@ from app.api.v1 import auth, users, articles, notifications, admin, saved_articl
 from app.tasks.scheduler import start_scheduler
 from app.core.database import engine, Base
 from app.api.v1 import admin_creation
+from app.api.v1 import categories
 
 Base.metadata.create_all(bind=engine)
 
 app = FastAPI(title="News Aggregator API")
 
-# start_scheduler()
+start_scheduler()
 
 
 app.include_router(
@@ -32,6 +33,13 @@ app.include_router(
     prefix=settings.API_V1_STR + "/saved-articles",
     tags=["Saved Articles"],
 )
+
+app.include_router(
+    notifications.router,
+    prefix=settings.API_V1_STR + "/notifications",
+    tags=["Notifications"]
+)
+app.include_router(categories.router, prefix=settings.API_V1_STR + "/categories", tags=["Categories"])
 
 app.include_router(admin_creation.router, prefix="/api/v1/utils", tags=["Utilities"])
 

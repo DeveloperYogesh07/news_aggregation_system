@@ -1,3 +1,4 @@
+from typing import List
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 from app.core.database import get_db
@@ -38,3 +39,8 @@ def update_external_source(source_id: int, data: ExternalSourceUpdate, db: Sessi
 def add_category(data: CategoryCreate, db: Session = Depends(get_db)):
     service = CategoryService(db)
     return service.create(data)
+
+@router.get("/categories/", response_model=List[CategoryRead])
+def list_categories(db: Session = Depends(get_db)):
+    service = CategoryService(db)
+    return service.get_all()

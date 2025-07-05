@@ -2,6 +2,9 @@ from unicodedata import category
 from sqlalchemy import or_
 from sqlalchemy.orm import Session
 from app.models.article import Article
+from datetime import date, timedelta
+from sqlalchemy import and_
+from datetime import datetime, date
 
 class ArticleRepository:
 
@@ -29,3 +32,23 @@ class ArticleRepository:
                 Article.content.ilike(f"%{query}%")
             )
         ).order_by(Article.created_at.desc()).all()
+    
+
+    @staticmethod
+    def get_by_date(db: Session, article_date: date, category: str = None):
+        query = db.query(Article).filter(Article.created_at >= article_date, Article.created_at < article_date + timedelta(days=1))
+        if category:
+            query = query.filter(Article.category == category)
+        return query.order_by(Article.created_at.desc()).all()
+
+    @staticmethod
+    def get_by_date_range(db: Session, start_date: date, end_date: date, category: str = None):
+        query = db.query(Article).filter(
+            Article.created_at >= datetime.combine(start_date, datetime.min.time()),
+            Article.created_at <= datetime.combine(end_date, datetime.max.time())
+        )
+
+        if category:
+            query = query.filter(Article.category == category)
+
+        return query.order_by(Article.created_at.desc()).all()

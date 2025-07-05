@@ -23,3 +23,6 @@ class CategoryService:
                 status_code=400,
                 detail=f"Category '{data.name}' already exists."
             )
+        
+    def get_all(self):
+        return self.db.query(Category).all()
