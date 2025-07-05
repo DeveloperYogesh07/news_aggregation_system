@@ -19,8 +19,8 @@ class NewsAPIClient(BaseNewsClient):
         response = httpx.get(self.BASE_URL, params=params)
         response.raise_for_status()
 
-        with open("newsapi_raw_response.json", "w") as f:
-            json.dump(response.json(), f, indent=2)
+        # with open("newsapi_raw_response.json", "w") as f:
+        #     json.dump(response.json(), f, indent=2)
 
         articles = response.json().get("articles", [])
         results = []

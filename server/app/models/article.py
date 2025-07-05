@@ -9,4 +9,5 @@ class Article(Base):
     title = Column(String(255), nullable=False)
     content = Column(Text, nullable=False)
     created_at = Column(DateTime(timezone=True), server_default=func.now())
+    url = Column(String)
     category = Column(String, nullable=True)

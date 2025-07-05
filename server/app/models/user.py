@@ -14,5 +14,5 @@ class User(Base):
     is_active = Column(Boolean, default=True)
     is_admin = Column(Boolean, default=False)
     created_at = Column(DateTime(timezone=True), server_default=func.now())
-    notifications = relationship("Notification", back_populates="user")
+    notifications = relationship("NotificationConfig", back_populates="user")
     saved_articles = relationship("SavedArticle", back_populates="user", cascade="all, delete")

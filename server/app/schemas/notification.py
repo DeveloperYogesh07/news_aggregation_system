@@ -1,9 +1,16 @@
 from pydantic import BaseModel
+from typing import Optional
 
-class NotificationRead(BaseModel):
+class NotificationConfigRead(BaseModel):
     id: int
-    message: str
-    is_read: bool
+    category: Optional[str]
+    keyword: Optional[str]
+    enabled: bool
 
     class Config:
         orm_mode = True
+
+class NotificationConfigUpdate(BaseModel):
+    category: Optional[str]
+    keyword: Optional[str]
+    enabled: bool

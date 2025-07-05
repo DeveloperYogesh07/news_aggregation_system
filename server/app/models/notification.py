@@ -1,14 +1,14 @@
-from sqlalchemy import Column, Integer, String, Boolean, ForeignKey, DateTime, func
+from sqlalchemy import Column, Integer, String, Boolean, ForeignKey
 from sqlalchemy.orm import relationship
 from app.core.database import Base
 
-class Notification(Base):
-    __tablename__ = "notifications"
+class NotificationConfig(Base):
+    __tablename__ = "notification_configs"
 
     id = Column(Integer, primary_key=True, index=True)
-    user_id = Column(Integer, ForeignKey("users.id"), nullable=False)
-    message = Column(String(255), nullable=False)
-    is_read = Column(Boolean, default=False)
-    created_at = Column(DateTime(timezone=True), server_default=func.now())
+    user_id = Column(Integer, ForeignKey("users.id"))
+    category = Column(String, nullable=True)
+    enabled = Column(Boolean, default=True)
+    keyword = Column(String, nullable=True)
 
     user = relationship("User", back_populates="notifications")
