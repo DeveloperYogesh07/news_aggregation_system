@@ -1,5 +1,6 @@
 from ui.base_menu import BaseMenu
 import requests
+from ui.notification import NotificationMenu
 
 class UserMenu(BaseMenu):
     def __init__(self, api_client):
@@ -25,7 +26,7 @@ class UserMenu(BaseMenu):
             elif choice == "3":
                 self.search_articles()
             elif choice == "4":
-                self.view_notifications()  # placeholder
+                NotificationMenu(self.api_client).show()  
             elif choice == "5": 
                 print("Logging out...")
                 break
@@ -69,7 +70,8 @@ class UserMenu(BaseMenu):
                 print("Query cannot be empty.")
                 return
 
-            articles = self.api_client.get(f"/articles/search?query={query}")
+            articles = self.api_client.get("/articles/search", params={"query": query})
+
             if not articles:
                 print("No articles found matching your search.")
                 return
@@ -84,8 +86,6 @@ class UserMenu(BaseMenu):
         except Exception as e:
             print(f"Search failed: {e}")
 
-    def view_notifications(self):
-        print("\n Notifications feature coming soon...\n")
 
     def select_article_menu(self):
         article_id = input("Enter the Article ID to view full content: ").strip()

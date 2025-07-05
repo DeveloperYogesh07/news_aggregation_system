@@ -27,11 +27,13 @@ class APIClient:
         response.raise_for_status()
         return response.json()
     
-    def put(self, path, data): 
+    def put(self, path, data):
         url = self.base_url + path
-        response = requests.put(url, json=data, headers=self._headers())
+        headers = {"Authorization": f"Bearer {self.token}"} if self.token else {}
+        response = requests.put(url, json=data, headers=headers)  
         response.raise_for_status()
         return response.json()
+
     
     def delete(self, path):
         url = self.base_url + path
