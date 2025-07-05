@@ -11,8 +11,8 @@ class Settings(BaseSettings):
 
     SMTP_SERVER: str = "smtp.gmail.com"
     SMTP_PORT: int = 587
-    SMTP_USER: str = ""
-    SMTP_PASSWORD: str = ""
+    SMTP_USER: str = "yogiupadhyay07@gmail.com"
+    SMTP_PASSWORD: str = "pxxr cpfk pwye ozci"
 
     class Config:
         env_file = ".env"

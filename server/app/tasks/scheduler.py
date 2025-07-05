@@ -17,6 +17,6 @@ def fetch_external_news_periodically():
 def start_scheduler():
     scheduler = BackgroundScheduler()
     scheduler.add_job(
-        fetch_external_news_periodically, "interval", hours=4
+        fetch_external_news_periodically, "interval", minutes=30
     )  
     scheduler.start()
