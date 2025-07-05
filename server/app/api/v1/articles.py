@@ -17,6 +17,13 @@ def list_articles(skip: int = 0, limit: int = 10, db: Session = Depends(get_db))
     service = NewsService(db)
     return service.get_articles(skip=skip, limit=limit)
 
+@router.get("/search", response_model=List[ArticleRead])
+def search_articles(
+    query: str = Query(...),
+    db: Session = Depends(get_db)
+):
+    return ArticleRepository.search(db, query)
+
 
 @router.get("/{article_id}", response_model=ArticleRead)
 def get_article(article_id: int, db: Session = Depends(get_db)):
@@ -38,9 +45,4 @@ def fetch_external_news(
     return {"message": "News fetched and stored"}
 
 
-@router.get("/search", response_model=List[ArticleRead])
-def search_articles(
-    query: str = Query(..., description="Search query"),
-    db: Session = Depends(get_db)
-):
-    return ArticleRepository.search(db, query)
+
