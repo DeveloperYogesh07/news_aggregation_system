@@ -10,6 +10,7 @@ from app.repositories.article_repository import ArticleRepository
 from app.schemas.article import ArticleRead
 from datetime import date
 from typing import List, Optional
+from app.repositories.vote_repository import VoteRepository
 
 router = APIRouter()
 
@@ -63,5 +64,8 @@ def get_articles_by_date(
 ):
     return ArticleRepository.get_by_date(db, date, category)
 
+@router.get("/votes/{article_id}/count")
+def get_vote_count(article_id: int, db: Session = Depends(get_db)):
+    return VoteRepository.count_votes(db, article_id)
 
 

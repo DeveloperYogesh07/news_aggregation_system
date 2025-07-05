@@ -16,3 +16,5 @@ class User(Base):
     created_at = Column(DateTime(timezone=True), server_default=func.now())
     notifications = relationship("NotificationConfig", back_populates="user")
     saved_articles = relationship("SavedArticle", back_populates="user", cascade="all, delete")
+    article_votes = relationship("ArticleVote", back_populates="user", cascade="all, delete")
+

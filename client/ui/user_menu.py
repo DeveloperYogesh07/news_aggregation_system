@@ -3,6 +3,7 @@ from ui.base_menu import BaseMenu
 import requests
 from ui.notification import NotificationMenu
 
+
 class UserMenu(BaseMenu):
     def __init__(self, api_client):
         super().__init__()
@@ -18,7 +19,7 @@ class UserMenu(BaseMenu):
                 "[3] Search\n"
                 "[4] Notifications\n"
                 "[5] Logout\nChoice: "
-            )
+            ).strip()
 
             if choice == "1":
                 self.view_headlines()
@@ -27,12 +28,12 @@ class UserMenu(BaseMenu):
             elif choice == "3":
                 self.search_articles()
             elif choice == "4":
-                NotificationMenu(self.api_client).show()  
-            elif choice == "5": 
+                NotificationMenu(self.api_client).show()
+            elif choice == "5":
                 print("Logging out...")
                 break
             else:
-                print("Invalid choice.")
+                print("Invalid choice. Please try again.")
 
     def view_headlines(self):
         while True:
@@ -40,7 +41,7 @@ class UserMenu(BaseMenu):
             print("Please choose the options below")
             print("[1] Today")
             print("[2] Date range")
-            print("[3] Logout")
+            print("[3] Back")
 
             choice = input("Choice: ").strip()
             if choice == "1":
@@ -48,11 +49,10 @@ class UserMenu(BaseMenu):
             elif choice == "2":
                 self._date_range_menu()
             elif choice == "3":
-                break
+                return
             else:
                 print("Invalid choice.")
 
-    
     def _fetch_articles_by_date(self, date, category=None):
         params = {"date": str(date)}
         if category:
@@ -65,22 +65,16 @@ class UserMenu(BaseMenu):
                 return
 
             self.last_displayed_articles = articles
-            print("\nH E A D L I N E S")
-            for article in articles:
-                print(f"ID: {article['id']}\nTitle: {article['title']}\n{'-'*40}")
-            self.select_article_menu()
+            self._display_articles()
         except Exception as e:
             print(f"Error: {e}")
-
 
     def _date_range_menu(self):
         try:
             start_date = input("Enter start date (YYYY-MM-DD): ").strip()
             end_date = input("Enter end date (YYYY-MM-DD): ").strip()
 
-            # Fetch categories from backend
             categories = self.api_client.get_categories()
-
             print("\nPlease choose the options below for Headlines")
             print("[1] All")
 
@@ -101,11 +95,6 @@ class UserMenu(BaseMenu):
         except Exception as e:
             print(f"Error: {e}")
 
-
-        except Exception as e:
-            print(f"Error: {e}")
-
-
     def _fetch_articles_by_range(self, start_date, end_date, category=None):
         params = {"start_date": start_date, "end_date": end_date}
         if category:
@@ -118,12 +107,15 @@ class UserMenu(BaseMenu):
                 return
 
             self.last_displayed_articles = articles
-            print("\nH E A D L I N E S")
-            for article in articles:
-                print(f"ID: {article['id']}\nTitle: {article['title']}\n{'-'*40}")
-            self.select_article_menu()
+            self._display_articles()
         except Exception as e:
             print(f"Error: {e}")
+
+    def _display_articles(self):
+        print("\nH E A D L I N E S")
+        for article in self.last_displayed_articles:
+            print(f"ID: {article['id']}\nTitle: {article['title']}\n{'-' * 40}")
+        self.select_article_menu()
 
     def view_saved_articles(self):
         try:
@@ -161,7 +153,6 @@ class UserMenu(BaseMenu):
         except Exception as e:
             print(f"Search failed: {e}")
 
-
     def select_article_menu(self):
         article_id = input("Enter the Article ID to view full content: ").strip()
         article = next((a for a in self.last_displayed_articles if str(a["id"]) == article_id), None)
@@ -175,16 +166,23 @@ class UserMenu(BaseMenu):
         print(f"URL: {article.get('url', '-')}")
         print("-" * 40)
 
+        try:
+            vote_data = self.api_client.get(f"/articles/votes/{article['id']}/count")
+            print(f"👍 Likes: {vote_data['likes']} | 👎 Dislikes: {vote_data['dislikes']}")
+        except Exception as e:
+            print(f"(Could not fetch vote count: {e})")
+
         while True:
-            choice = input("1. Back\n2. Logout\n3. Save Article\nChoice: ")
+            choice = input("1. Back\n2. Save Article\n3. Like\n4. Dislike\nChoice: ").strip()
 
             if choice == "1":
-                break
+                return
             elif choice == "2":
-                exit()
-            elif choice == "3":
                 self.save_article(article)
-                break
+            elif choice == "3":
+                self.vote_article(article["id"], "like")
+            elif choice == "4":
+                self.vote_article(article["id"], "dislike")
             else:
                 print("Invalid choice.")
 
@@ -206,3 +204,11 @@ class UserMenu(BaseMenu):
                 print("Save failed:", err)
         except Exception as e:
             print(f"Error: {e}")
+
+    def vote_article(self, article_id, vote_type):
+        try:
+            payload = {"article_id": article_id, "vote": vote_type}
+            self.api_client.post("/votes/", data=payload)
+            print(f"You {vote_type}d this article.")
+        except Exception as e:
+            print(f"Failed to vote: {e}")

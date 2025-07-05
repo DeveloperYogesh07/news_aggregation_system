@@ -5,6 +5,7 @@ from app.tasks.scheduler import start_scheduler
 from app.core.database import engine, Base
 from app.api.v1 import admin_creation
 from app.api.v1 import categories
+from app.api.v1 import votes
 
 Base.metadata.create_all(bind=engine)
 
@@ -40,6 +41,10 @@ app.include_router(
     tags=["Notifications"]
 )
 app.include_router(categories.router, prefix=settings.API_V1_STR + "/categories", tags=["Categories"])
+
+
+app.include_router(votes.router, prefix="/api/v1/votes", tags=["Votes"])
+
 
 app.include_router(admin_creation.router, prefix="/api/v1/utils", tags=["Utilities"])
 

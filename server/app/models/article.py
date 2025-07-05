@@ -11,3 +11,5 @@ class Article(Base):
     created_at = Column(DateTime(timezone=True), server_default=func.now())
     url = Column(String)
     category = Column(String, nullable=True)
+    votes = relationship("ArticleVote", back_populates="article", cascade="all, delete")
+
