@@ -1,3 +1,4 @@
+import datetime
 from ui.base_menu import BaseMenu
 import requests
 from ui.notification import NotificationMenu
@@ -34,21 +35,95 @@ class UserMenu(BaseMenu):
                 print("Invalid choice.")
 
     def view_headlines(self):
+        while True:
+            self.print_header("H E A D L I N E S")
+            print("Please choose the options below")
+            print("[1] Today")
+            print("[2] Date range")
+            print("[3] Logout")
+
+            choice = input("Choice: ").strip()
+            if choice == "1":
+                self._fetch_articles_by_date(datetime.datetime.today().date())
+            elif choice == "2":
+                self._date_range_menu()
+            elif choice == "3":
+                break
+            else:
+                print("Invalid choice.")
+
+    
+    def _fetch_articles_by_date(self, date, category=None):
+        params = {"date": str(date)}
+        if category:
+            params["category"] = category
+
         try:
-            articles = self.api_client.get("/articles/")
+            articles = self.api_client.get("/articles/", params=params)
             if not articles:
                 print("No articles found.")
                 return
 
             self.last_displayed_articles = articles
-            print("\nLatest Headlines:")
+            print("\nH E A D L I N E S")
             for article in articles:
-                print(f"ID: {article['id']}\nTitle: {article['title']}\n" + "-" * 40)
-
+                print(f"ID: {article['id']}\nTitle: {article['title']}\n{'-'*40}")
             self.select_article_menu()
+        except Exception as e:
+            print(f"Error: {e}")
+
+
+    def _date_range_menu(self):
+        try:
+            start_date = input("Enter start date (YYYY-MM-DD): ").strip()
+            end_date = input("Enter end date (YYYY-MM-DD): ").strip()
+
+            # Fetch categories from backend
+            categories = self.api_client.get_categories()
+
+            print("\nPlease choose the options below for Headlines")
+            print("[1] All")
+
+            category_map = {"1": None}
+            for idx, cat in enumerate(categories, start=2):
+                print(f"[{idx}] {cat['name'].capitalize()}")
+                category_map[str(idx)] = cat["name"]
+
+            choice = input("Choice: ").strip()
+            category = category_map.get(choice)
+
+            if choice not in category_map:
+                print("Invalid choice.")
+                return
+
+            self._fetch_articles_by_range(start_date, end_date, category)
 
         except Exception as e:
-            print(f"Failed to fetch headlines: {e}")
+            print(f"Error: {e}")
+
+
+        except Exception as e:
+            print(f"Error: {e}")
+
+
+    def _fetch_articles_by_range(self, start_date, end_date, category=None):
+        params = {"start_date": start_date, "end_date": end_date}
+        if category:
+            params["category"] = category
+
+        try:
+            articles = self.api_client.get("/articles/range", params=params)
+            if not articles:
+                print("No articles found.")
+                return
+
+            self.last_displayed_articles = articles
+            print("\nH E A D L I N E S")
+            for article in articles:
+                print(f"ID: {article['id']}\nTitle: {article['title']}\n{'-'*40}")
+            self.select_article_menu()
+        except Exception as e:
+            print(f"Error: {e}")
 
     def view_saved_articles(self):
         try:

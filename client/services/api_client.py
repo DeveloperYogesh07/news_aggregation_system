@@ -40,4 +40,8 @@ class APIClient:
         response = requests.delete(url, headers=self._headers())
         response.raise_for_status()
         return response.json()
+    
+    def get_categories(self):
+         return self.get("/categories")
+    
 
