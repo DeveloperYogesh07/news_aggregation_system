@@ -2,38 +2,30 @@
 
 class APIEndpoints:
 
-    # Authentication endpoints
     LOGIN = "/auth/login"
     SIGNUP = "/auth/signup"
 
-    # User endpoints
     USER_PROFILE = "/users/me"
 
-    # Article endpoints
     ARTICLES = "/articles/"
     ARTICLES_RANGE = "/articles/range"
     ARTICLES_SEARCH = "/articles/search"
     ARTICLE_REPORT = "/articles/report/{article_id}"
     ARTICLE_HIDE = "/admin/articles/{article_id}/hide"
 
-    # Category endpoints
     CATEGORIES = "/categories/"
     CATEGORY_HIDE = "/admin/categories/{category_id}/hide"
     CATEGORY_CREATE = "/admin/categories/"
 
-    # Saved articles endpoints
     SAVED_ARTICLES = "/saved-articles/"
 
-    # Vote endpoints
     VOTES = "/votes/"
 
-    # Notification endpoints
     NOTIFICATIONS = "/notifications/"
     NOTIFICATION_HISTORY = "/notifications/history"
     NOTIFICATION_KEYWORDS = "/notifications/keywords"
     NOTIFICATION_UPDATE = "/notifications/{notification_id}"
 
-    # Admin endpoints
     EXTERNAL_SOURCES = "/admin/external-sources"
     EXTERNAL_SOURCE_UPDATE = "/admin/external-sources/{server_id}"
     REPORTED_ARTICLES = "/admin/reported-articles"

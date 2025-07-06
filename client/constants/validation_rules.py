@@ -3,17 +3,14 @@ import re
 
 class ValidationRules:
 
-    # Length constraints
     MIN_USERNAME_LENGTH = 3
     MAX_USERNAME_LENGTH = 20
     MIN_PASSWORD_LENGTH = 3
     MAX_PASSWORD_LENGTH = 128
 
-    # Patterns
     USERNAME_PATTERN = r"^[a-zA-Z0-9_]+$"
     EMAIL_PATTERN = r"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
 
-    # Compiled patterns
     USERNAME_REGEX = re.compile(USERNAME_PATTERN)
     EMAIL_REGEX = re.compile(EMAIL_PATTERN)
 
