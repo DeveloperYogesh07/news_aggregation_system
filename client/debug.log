@@ -109,3 +109,114 @@
 2025-07-07 00:02:08,765 - services.api_client - WARNING - Authentication failed: 401
 2025-07-07 00:02:08,766 - services.api_client - ERROR - Unexpected error for http://127.0.0.1:8000/api/v1/auth/login: Authentication error during login: Invalid email or password
 2025-07-07 00:02:08,766 - ui.login_menu - ERROR - Data processing error during login: Data processing error during request: An unexpected error occurred. Please try again.
+2025-07-07 00:13:21,114 - __main__ - DEBUG - Starting News Aggregation System Client
+2025-07-07 00:13:33,407 - ui.login_menu - INFO - Attempting login for email: capisbest07@gmail.com
+2025-07-07 00:13:33,407 - services.api_client - DEBUG - Making POST request to http://127.0.0.1:8000/api/v1/auth/login
+2025-07-07 00:13:33,439 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:8000
+2025-07-07 00:13:34,000 - urllib3.connectionpool - DEBUG - http://127.0.0.1:8000 "POST /api/v1/auth/login HTTP/1.1" 200 162
+2025-07-07 00:13:34,000 - services.api_client - DEBUG - Authentication token set
+2025-07-07 00:13:34,000 - ui.login_menu - INFO - Login successful for email: capisbest07@gmail.com
+2025-07-07 00:13:34,000 - services.api_client - DEBUG - Making GET request to http://127.0.0.1:8000/api/v1/users/me
+2025-07-07 00:13:34,000 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:8000
+2025-07-07 00:13:34,023 - urllib3.connectionpool - DEBUG - http://127.0.0.1:8000 "GET /api/v1/users/me HTTP/1.1" 200 74
+2025-07-07 00:13:34,032 - __main__ - INFO - User session started for user: cap
+2025-07-07 00:13:36,201 - services.api_client - DEBUG - Making GET request to http://127.0.0.1:8000/api/v1/articles/
+2025-07-07 00:13:36,208 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:8000
+2025-07-07 00:13:36,232 - urllib3.connectionpool - DEBUG - http://127.0.0.1:8000 "GET /api/v1/articles/?date=2025-07-07 HTTP/1.1" 200 3960
+2025-07-07 00:13:40,456 - services.api_client - DEBUG - Making POST request to http://127.0.0.1:8000/api/v1/saved-articles/
+2025-07-07 00:13:40,456 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:8000
+2025-07-07 00:13:40,509 - urllib3.connectionpool - DEBUG - http://127.0.0.1:8000 "POST /api/v1/saved-articles/ HTTP/1.1" 200 398
+2025-07-07 00:13:40,521 - UserMenu - INFO - Article saved successfully.
+2025-07-07 00:13:45,358 - services.api_client - DEBUG - Making GET request to http://127.0.0.1:8000/api/v1/saved-articles/
+2025-07-07 00:13:45,358 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:8000
+2025-07-07 00:13:45,388 - urllib3.connectionpool - DEBUG - http://127.0.0.1:8000 "GET /api/v1/saved-articles/ HTTP/1.1" 200 1667
+2025-07-07 00:13:52,954 - services.api_client - DEBUG - Making GET request to http://127.0.0.1:8000/api/v1/articles/search
+2025-07-07 00:13:52,955 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:8000
+2025-07-07 00:13:52,973 - urllib3.connectionpool - DEBUG - http://127.0.0.1:8000 "GET /api/v1/articles/search?query=trump HTTP/1.1" 200 5422
+2025-07-07 00:13:56,539 - UserMenu - ERROR - Article not found.
+2025-07-07 00:14:01,758 - services.api_client - DEBUG - Making GET request to http://127.0.0.1:8000/api/v1/notifications/history
+2025-07-07 00:14:01,776 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:8000
+2025-07-07 00:14:01,790 - urllib3.connectionpool - DEBUG - http://127.0.0.1:8000 "GET /api/v1/notifications/history HTTP/1.1" 200 378
+2025-07-07 00:14:04,379 - services.api_client - DEBUG - Making GET request to http://127.0.0.1:8000/api/v1/notifications/
+2025-07-07 00:14:04,395 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:8000
+2025-07-07 00:14:04,395 - urllib3.connectionpool - DEBUG - http://127.0.0.1:8000 "GET /api/v1/notifications/ HTTP/1.1" 200 184
+2025-07-07 00:14:12,850 - UserMenu - INFO - Logging out...
+2025-07-07 00:14:36,519 - ui.login_menu - INFO - Attempting signup for email: akshat@gmail.com
+2025-07-07 00:14:36,519 - services.api_client - DEBUG - Making POST request to http://127.0.0.1:8000/api/v1/auth/signup
+2025-07-07 00:14:36,519 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:8000
+2025-07-07 00:14:36,983 - urllib3.connectionpool - DEBUG - http://127.0.0.1:8000 "POST /api/v1/auth/signup HTTP/1.1" 200 162
+2025-07-07 00:14:36,983 - services.api_client - DEBUG - Authentication token set
+2025-07-07 00:14:36,983 - ui.login_menu - INFO - Signup successful for email: akshat@gmail.com
+2025-07-07 00:14:36,983 - services.api_client - DEBUG - Making GET request to http://127.0.0.1:8000/api/v1/users/me
+2025-07-07 00:14:36,983 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:8000
+2025-07-07 00:14:37,007 - urllib3.connectionpool - DEBUG - http://127.0.0.1:8000 "GET /api/v1/users/me HTTP/1.1" 200 72
+2025-07-07 00:14:37,011 - __main__ - INFO - User session started for user: akshat
+2025-07-07 00:15:30,948 - __main__ - DEBUG - Starting News Aggregation System Client
+2025-07-07 00:15:38,345 - ui.login_menu - INFO - Attempting login for email: akshat@gmail.com
+2025-07-07 00:15:38,345 - services.api_client - DEBUG - Making POST request to http://127.0.0.1:8000/api/v1/auth/login
+2025-07-07 00:15:38,421 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:8000
+2025-07-07 00:15:38,900 - urllib3.connectionpool - DEBUG - http://127.0.0.1:8000 "POST /api/v1/auth/login HTTP/1.1" 200 162
+2025-07-07 00:15:38,910 - services.api_client - DEBUG - Authentication token set
+2025-07-07 00:15:38,911 - ui.login_menu - INFO - Login successful for email: akshat@gmail.com
+2025-07-07 00:15:38,911 - services.api_client - DEBUG - Making GET request to http://127.0.0.1:8000/api/v1/users/me
+2025-07-07 00:15:38,912 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:8000
+2025-07-07 00:15:38,925 - urllib3.connectionpool - DEBUG - http://127.0.0.1:8000 "GET /api/v1/users/me HTTP/1.1" 200 72
+2025-07-07 00:15:38,927 - __main__ - INFO - User session started for user: akshat
+2025-07-07 00:15:45,896 - services.api_client - DEBUG - Making GET request to http://127.0.0.1:8000/api/v1/articles/
+2025-07-07 00:15:45,911 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:8000
+2025-07-07 00:15:45,925 - urllib3.connectionpool - DEBUG - http://127.0.0.1:8000 "GET /api/v1/articles/?date=2025-07-07 HTTP/1.1" 200 3960
+2025-07-07 00:15:56,554 - UserMenu - INFO - Logging out...
+2025-07-07 00:28:32,388 - __main__ - DEBUG - Starting News Aggregation System Client
+2025-07-07 00:28:46,944 - ui.login_menu - INFO - Attempting signup for email: anmol@gmail.com
+2025-07-07 00:28:46,944 - services.api_client - DEBUG - Making POST request to http://127.0.0.1:8000/api/v1/auth/signup
+2025-07-07 00:28:46,960 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:8000
+2025-07-07 00:28:47,509 - urllib3.connectionpool - DEBUG - http://127.0.0.1:8000 "POST /api/v1/auth/signup HTTP/1.1" 200 162
+2025-07-07 00:28:47,509 - ui.login_menu - INFO - Signup successful for email: anmol@gmail.com
+2025-07-07 00:29:00,118 - ui.login_menu - INFO - Attempting login for email: anmol@gmail.com
+2025-07-07 00:29:00,118 - services.api_client - DEBUG - Making POST request to http://127.0.0.1:8000/api/v1/auth/login
+2025-07-07 00:29:00,118 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:8000
+2025-07-07 00:29:00,595 - urllib3.connectionpool - DEBUG - http://127.0.0.1:8000 "POST /api/v1/auth/login HTTP/1.1" 200 162
+2025-07-07 00:29:00,600 - services.api_client - DEBUG - Authentication token set
+2025-07-07 00:29:00,600 - ui.login_menu - INFO - Login successful for email: anmol@gmail.com
+2025-07-07 00:29:00,600 - services.api_client - DEBUG - Making GET request to http://127.0.0.1:8000/api/v1/users/me
+2025-07-07 00:29:00,600 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:8000
+2025-07-07 00:29:00,612 - urllib3.connectionpool - DEBUG - http://127.0.0.1:8000 "GET /api/v1/users/me HTTP/1.1" 200 70
+2025-07-07 00:29:00,612 - __main__ - INFO - User session started for user: anmol
+2025-07-07 00:29:04,632 - services.api_client - DEBUG - Making GET request to http://127.0.0.1:8000/api/v1/articles/
+2025-07-07 00:29:04,632 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:8000
+2025-07-07 00:29:04,658 - urllib3.connectionpool - DEBUG - http://127.0.0.1:8000 "GET /api/v1/articles/?date=2025-07-07 HTTP/1.1" 200 3960
+2025-07-07 00:29:09,602 - services.api_client - DEBUG - Making POST request to http://127.0.0.1:8000/api/v1/saved-articles/
+2025-07-07 00:29:09,618 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:8000
+2025-07-07 00:29:09,657 - urllib3.connectionpool - DEBUG - http://127.0.0.1:8000 "POST /api/v1/saved-articles/ HTTP/1.1" 200 398
+2025-07-07 00:29:09,657 - UserMenu - INFO - Article saved successfully.
+2025-07-07 00:29:16,055 - services.api_client - DEBUG - Making GET request to http://127.0.0.1:8000/api/v1/saved-articles/
+2025-07-07 00:29:16,055 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:8000
+2025-07-07 00:29:16,070 - urllib3.connectionpool - DEBUG - http://127.0.0.1:8000 "GET /api/v1/saved-articles/ HTTP/1.1" 200 400
+2025-07-07 00:29:22,740 - services.api_client - DEBUG - Making GET request to http://127.0.0.1:8000/api/v1/notifications/history
+2025-07-07 00:29:22,740 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:8000
+2025-07-07 00:29:22,766 - urllib3.connectionpool - DEBUG - http://127.0.0.1:8000 "GET /api/v1/notifications/history HTTP/1.1" 200 2
+2025-07-07 00:29:22,769 - NotificationMenu - INFO - No notifications yet.
+2025-07-07 00:29:32,935 - services.api_client - DEBUG - Making GET request to http://127.0.0.1:8000/api/v1/notifications/
+2025-07-07 00:29:32,948 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:8000
+2025-07-07 00:29:32,988 - urllib3.connectionpool - DEBUG - http://127.0.0.1:8000 "GET /api/v1/notifications/ HTTP/1.1" 200 374
+2025-07-07 00:29:44,504 - NotificationMenu - INFO - Logging out...
+2025-07-07 00:29:46,653 - UserMenu - INFO - Logging out...
+2025-07-07 00:31:49,033 - __main__ - DEBUG - Starting News Aggregation System Client
+2025-07-07 00:31:59,288 - ui.login_menu - INFO - Attempting login for email: anmol@gmail.com
+2025-07-07 00:31:59,288 - services.api_client - DEBUG - Making POST request to http://127.0.0.1:8000/api/v1/auth/login
+2025-07-07 00:31:59,304 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:8000
+2025-07-07 00:31:59,728 - urllib3.connectionpool - DEBUG - http://127.0.0.1:8000 "POST /api/v1/auth/login HTTP/1.1" 200 162
+2025-07-07 00:31:59,745 - services.api_client - DEBUG - Authentication token set
+2025-07-07 00:31:59,746 - ui.login_menu - INFO - Login successful for email: anmol@gmail.com
+2025-07-07 00:31:59,746 - services.api_client - DEBUG - Making GET request to http://127.0.0.1:8000/api/v1/users/me
+2025-07-07 00:31:59,747 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:8000
+2025-07-07 00:31:59,759 - urllib3.connectionpool - DEBUG - http://127.0.0.1:8000 "GET /api/v1/users/me HTTP/1.1" 200 70
+2025-07-07 00:31:59,765 - __main__ - INFO - User session started for user: anmol
+2025-07-07 00:32:07,386 - services.api_client - DEBUG - Making GET request to http://127.0.0.1:8000/api/v1/articles/search
+2025-07-07 00:32:07,386 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:8000
+2025-07-07 00:32:07,410 - urllib3.connectionpool - DEBUG - http://127.0.0.1:8000 "GET /api/v1/articles/search?query=sports HTTP/1.1" 200 1244
+2025-07-07 00:32:15,282 - services.api_client - DEBUG - Making POST request to http://127.0.0.1:8000/api/v1/articles/report/4
+2025-07-07 00:32:15,291 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:8000
+2025-07-07 00:32:15,339 - urllib3.connectionpool - DEBUG - http://127.0.0.1:8000 "POST /api/v1/articles/report/4 HTTP/1.1" 200 43
+2025-07-07 00:32:15,342 - UserMenu - INFO - Article reported successfully.
+2025-07-07 00:32:18,763 - UserMenu - INFO - Logging out...

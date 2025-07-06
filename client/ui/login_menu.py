@@ -80,14 +80,11 @@ class AuthenticationService:
                 {"username": username, "email": email, "password": password},
             )
 
-            self.api_client.set_token(response["access_token"])
             self.logger.info(f"Signup successful for email: {email}")
+            print("Account created successfully!")
+            print("Please login with your new credentials.")
 
-            profile = self.api_client.get("/users/me")
-            print("Signup successful.")
-            print(f"Welcome, {profile['username']}!")
-
-            return profile
+            return None
 
         except AuthenticationError as e:
             self.logger.warning(f"Signup failed - authentication error: {e}")
