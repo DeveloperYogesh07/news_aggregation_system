@@ -126,7 +126,7 @@ class AdminMenu(BaseMenu):
                     self._handle_blacklist_keyword()
                 elif choice == self.LOGOUT:
                     self.display_info("Logging out...")
-                    exit()
+                    return
                 else:
                     self.display_error("Invalid choice. Please try again.")
 

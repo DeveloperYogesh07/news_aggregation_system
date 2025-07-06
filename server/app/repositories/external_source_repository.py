@@ -1,6 +1,7 @@
 from sqlalchemy.orm import Session
 from app.models.external_source import ExternalSource
-from datetime import datetime
+from datetime import datetime, timezone
+
 
 class ExternalSourceRepository:
 
@@ -33,17 +34,11 @@ class ExternalSourceRepository:
         db.commit()
         db.refresh(source)
         return source
-    
 
     @staticmethod
     def update_last_accessed(db: Session, source_id: int):
-        from datetime import datetime
         source = db.query(ExternalSource).filter_by(id=source_id).first()
         if source:
-            source.last_accessed = datetime.utcnow()
+            source.last_accessed = datetime.now(timezone.utc)  # type: ignore
             db.commit()
             db.refresh(source)
-            print(f"[DEBUG] last_accessed updated for source ID {source_id}")  # ✅ Log here
-        else:
-            print(f"[DEBUG] Source ID {source_id} not found")
-

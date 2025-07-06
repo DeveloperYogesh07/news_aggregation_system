@@ -1,0 +1,33 @@
+2025-07-06 22:57:30,409 - __main__ - DEBUG - Starting News Aggregation System Client
+2025-07-06 22:57:43,579 - ui.login_menu - INFO - Attempting login for email: capisbest07@gmail.com
+2025-07-06 22:57:43,580 - services.api_client - DEBUG - Making POST request to http://127.0.0.1:8000/api/v1/auth/login
+2025-07-06 22:57:43,582 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:8000
+2025-07-06 22:57:43,927 - urllib3.connectionpool - DEBUG - http://127.0.0.1:8000 "POST /api/v1/auth/login HTTP/1.1" 200 162
+2025-07-06 22:57:43,927 - services.api_client - DEBUG - Authentication token set
+2025-07-06 22:57:43,927 - ui.login_menu - INFO - Login successful for email: capisbest07@gmail.com
+2025-07-06 22:57:43,927 - services.api_client - DEBUG - Making GET request to http://127.0.0.1:8000/api/v1/users/me
+2025-07-06 22:57:43,927 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:8000
+2025-07-06 22:57:43,944 - urllib3.connectionpool - DEBUG - http://127.0.0.1:8000 "GET /api/v1/users/me HTTP/1.1" 200 74
+2025-07-06 22:57:43,946 - __main__ - INFO - User session started for user: cap
+2025-07-06 22:57:47,846 - services.api_client - DEBUG - Making GET request to http://127.0.0.1:8000/api/v1/articles/
+2025-07-06 22:57:47,850 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:8000
+2025-07-06 22:57:47,852 - urllib3.connectionpool - DEBUG - http://127.0.0.1:8000 "GET /api/v1/articles/?date=2025-07-06 HTTP/1.1" 200 3960
+2025-07-06 22:57:56,800 - UserMenu - INFO - Logging out...
+2025-07-06 22:58:04,580 - ui.login_menu - INFO - Attempting login for email: admin@gmail.com
+2025-07-06 22:58:04,580 - services.api_client - DEBUG - Making POST request to http://127.0.0.1:8000/api/v1/auth/login
+2025-07-06 22:58:04,581 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:8000
+2025-07-06 22:58:04,815 - urllib3.connectionpool - DEBUG - http://127.0.0.1:8000 "POST /api/v1/auth/login HTTP/1.1" 200 162
+2025-07-06 22:58:04,815 - services.api_client - DEBUG - Authentication token set
+2025-07-06 22:58:04,815 - ui.login_menu - INFO - Login successful for email: admin@gmail.com
+2025-07-06 22:58:04,815 - services.api_client - DEBUG - Making GET request to http://127.0.0.1:8000/api/v1/users/me
+2025-07-06 22:58:04,815 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:8000
+2025-07-06 22:58:04,815 - urllib3.connectionpool - DEBUG - http://127.0.0.1:8000 "GET /api/v1/users/me HTTP/1.1" 200 69
+2025-07-06 22:58:04,831 - __main__ - INFO - Admin session started for user: admin
+2025-07-06 22:58:12,275 - services.api_client - DEBUG - Making GET request to http://127.0.0.1:8000/api/v1/categories/
+2025-07-06 22:58:12,276 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:8000
+2025-07-06 22:58:12,276 - urllib3.connectionpool - DEBUG - http://127.0.0.1:8000 "GET /api/v1/categories/ HTTP/1.1" 200 138
+2025-07-06 22:58:13,691 - services.api_client - DEBUG - Making PUT request to http://127.0.0.1:8000/api/v1/admin/categories/5/hide
+2025-07-06 22:58:13,692 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:8000
+2025-07-06 22:58:13,692 - urllib3.connectionpool - DEBUG - http://127.0.0.1:8000 "PUT /api/v1/admin/categories/5/hide HTTP/1.1" 200 29
+2025-07-06 22:58:13,698 - AdminMenu - INFO - Category hidden successfully.
+2025-07-06 22:58:16,915 - AdminMenu - INFO - Logging out...

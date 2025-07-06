@@ -12,7 +12,7 @@ def main() -> None:
     try:
         setup_logger()
         logger = logging.getLogger(__name__)
-        logger.info("Starting News Aggregation System Client")
+        logger.debug("Starting News Aggregation System Client")
 
         api_client = APIClient()
 

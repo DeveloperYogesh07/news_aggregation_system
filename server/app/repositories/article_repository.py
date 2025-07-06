@@ -6,6 +6,7 @@ from sqlalchemy import and_
 from datetime import datetime, date
 from app.models.category import Category
 from app.models.blacklisted_keyword import BlacklistedKeyword
+from typing import Optional
 
 
 class ArticleRepository:
@@ -19,7 +20,7 @@ class ArticleRepository:
         db: Session,
         title: str,
         content: str,
-        url: str = None,
+        url: Optional[str] = None,
         category: str = "general",
     ):
         db_article = Article(
@@ -34,13 +35,16 @@ class ArticleRepository:
     def get_all(db: Session, skip: int = 0, limit: int = 10):
         blacklist = ArticleRepository.get_blacklisted_keywords(db)
 
-        query = db.query(Article).join(Category, Article.category == Category.name)\
+        query = (
+            db.query(Article)
+            .join(Category, Article.category == Category.name)
             .filter(Article.is_hidden == False, Category.is_hidden == False)
+        )
 
         for kw in blacklist:
             query = query.filter(
                 not_(Article.title.ilike(f"%{kw}%")),
-                not_(Article.content.ilike(f"%{kw}%"))
+                not_(Article.content.ilike(f"%{kw}%")),
             )
 
         return query.offset(skip).limit(limit).all()
@@ -53,36 +57,41 @@ class ArticleRepository:
     def search(db: Session, query_str: str):
         blacklist = ArticleRepository.get_blacklisted_keywords(db)
 
-        query = db.query(Article).join(Category, Article.category == Category.name)\
+        query = (
+            db.query(Article)
+            .join(Category, Article.category == Category.name)
             .filter(
                 Article.is_hidden == False,
                 Category.is_hidden == False,
                 or_(
                     Article.title.ilike(f"%{query_str}%"),
-                    Article.content.ilike(f"%{query_str}%")
-                )
+                    Article.content.ilike(f"%{query_str}%"),
+                ),
             )
+        )
 
         for kw in blacklist:
             query = query.filter(
                 not_(Article.title.ilike(f"%{kw}%")),
-                not_(Article.content.ilike(f"%{kw}%"))
+                not_(Article.content.ilike(f"%{kw}%")),
             )
 
         return query.order_by(Article.created_at.desc()).all()
 
-
     @staticmethod
-    def get_by_date(db: Session, article_date: date, category: str = None):
+    def get_by_date(db: Session, article_date: date, category: Optional[str] = None):
         blacklist = ArticleRepository.get_blacklisted_keywords(db)
 
-        query = db.query(Article).join(Category, Article.category == Category.name)\
+        query = (
+            db.query(Article)
+            .join(Category, Article.category == Category.name)
             .filter(
                 Article.created_at >= article_date,
                 Article.created_at < article_date + timedelta(days=1),
                 Article.is_hidden == False,
-                Category.is_hidden == False
+                Category.is_hidden == False,
             )
+        )
 
         if category:
             query = query.filter(Article.category == category)
@@ -90,22 +99,27 @@ class ArticleRepository:
         for kw in blacklist:
             query = query.filter(
                 not_(Article.title.ilike(f"%{kw}%")),
-                not_(Article.content.ilike(f"%{kw}%"))
+                not_(Article.content.ilike(f"%{kw}%")),
             )
 
         return query.order_by(Article.created_at.desc()).all()
 
     @staticmethod
-    def get_by_date_range(db: Session, start_date: date, end_date: date, category: str = None):
+    def get_by_date_range(
+        db: Session, start_date: date, end_date: date, category: Optional[str] = None
+    ):
         blacklist = ArticleRepository.get_blacklisted_keywords(db)
 
-        query = db.query(Article).join(Category, Article.category == Category.name)\
+        query = (
+            db.query(Article)
+            .join(Category, Article.category == Category.name)
             .filter(
                 Article.created_at >= datetime.combine(start_date, datetime.min.time()),
                 Article.created_at <= datetime.combine(end_date, datetime.max.time()),
                 Article.is_hidden == False,
-                Category.is_hidden == False
+                Category.is_hidden == False,
             )
+        )
 
         if category:
             query = query.filter(Article.category == category)
@@ -113,7 +127,7 @@ class ArticleRepository:
         for kw in blacklist:
             query = query.filter(
                 not_(Article.title.ilike(f"%{kw}%")),
-                not_(Article.content.ilike(f"%{kw}%"))
+                not_(Article.content.ilike(f"%{kw}%")),
             )
 
         return query.order_by(Article.created_at.desc()).all()

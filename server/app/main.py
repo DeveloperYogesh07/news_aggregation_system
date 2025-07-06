@@ -13,7 +13,6 @@ app = FastAPI(title="News Aggregator API")
 
 start_scheduler()
 
-
 app.include_router(
     auth.router, prefix=settings.API_V1_STR + "/auth", tags=["Authentication"]
 )
@@ -36,17 +35,14 @@ app.include_router(
 )
 
 app.include_router(
-    notifications.router,
-    prefix=settings.API_V1_STR + "/notifications",
-    tags=["Notifications"]
+    categories.router, prefix=settings.API_V1_STR + "/categories", tags=["Categories"]
 )
-app.include_router(categories.router, prefix=settings.API_V1_STR + "/categories", tags=["Categories"])
 
+app.include_router(votes.router, prefix=settings.API_V1_STR + "/votes", tags=["Votes"])
 
-app.include_router(votes.router, prefix="/api/v1/votes", tags=["Votes"])
-
-
-app.include_router(admin_creation.router, prefix="/api/v1/utils", tags=["Utilities"])
+app.include_router(
+    admin_creation.router, prefix=settings.API_V1_STR + "/utils", tags=["Utilities"]
+)
 
 
 @app.get("/")

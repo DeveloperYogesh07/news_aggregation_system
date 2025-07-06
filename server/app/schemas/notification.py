@@ -2,6 +2,7 @@ from datetime import datetime
 from pydantic import BaseModel
 from typing import Optional
 
+
 class NotificationConfigRead(BaseModel):
     id: int
     category: Optional[str]
@@ -9,7 +10,8 @@ class NotificationConfigRead(BaseModel):
     enabled: bool
 
     class Config:
-        orm_mode = True
+        from_attributes = True
+
 
 class NotificationConfigUpdate(BaseModel):
     category: Optional[str]
@@ -23,4 +25,4 @@ class NotificationRead(BaseModel):
     created_at: datetime
 
     class Config:
-        orm_mode = True
+        from_attributes = True

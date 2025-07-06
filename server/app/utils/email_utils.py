@@ -23,7 +23,5 @@ def send_email(to: str, subject: str, body: str, html_format: bool = False):
             server.starttls()
             server.login(smtp_user, smtp_password)
             server.sendmail(smtp_user, to, msg.as_string())
-
-        print(f"Email sent to {to}")
     except Exception as e:
-        print(f"Failed to send email to {to}: {e}")
+        pass
