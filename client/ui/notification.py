@@ -8,7 +8,6 @@ from exceptions.custom_exceptions import (
     NetworkError,
     DataProcessingError,
 )
-from constants.menu_options import MenuOptions
 
 
 class NotificationService:
@@ -63,11 +62,7 @@ class NotificationService:
 
 
 class NotificationMenu(BaseMenu):
-
-    VIEW_NOTIFICATIONS = MenuOptions.VIEW_NOTIFICATIONS
-    CONFIGURE_NOTIFICATIONS = MenuOptions.CONFIGURE_NOTIFICATIONS
-    BACK = MenuOptions.BACK
-    LOGOUT = MenuOptions.LOGOUT
+    pass
 
     def __init__(self, api_client: APIClient):
         super().__init__()
@@ -80,13 +75,13 @@ class NotificationMenu(BaseMenu):
                 self._display_welcome_message()
                 choice = self._get_menu_choice()
 
-                if choice == self.VIEW_NOTIFICATIONS:
+                if choice == "1":
                     self._handle_view_notifications()
-                elif choice == self.CONFIGURE_NOTIFICATIONS:
+                elif choice == "2":
                     self._handle_configure_notifications()
-                elif choice == self.BACK:
+                elif choice == "3":
                     return
-                elif choice == self.LOGOUT:
+                elif choice == "4":
                     self.display_info("Logging out...")
                     return
                 else:
@@ -105,10 +100,10 @@ class NotificationMenu(BaseMenu):
         print(f"Time: {current_time.strftime('%I:%M %p')}")
 
     def _get_menu_choice(self) -> str:
-        print(f"\n{self.VIEW_NOTIFICATIONS}. View Notifications")
-        print(f"{self.CONFIGURE_NOTIFICATIONS}. Configure Notifications")
-        print(f"{self.BACK}. Back")
-        print(f"{self.LOGOUT}. Logout")
+        print("\n1. View Notifications")
+        print("2. Configure Notifications")
+        print("3. Back")
+        print("4. Logout")
         return input("Choice: ").strip()
 
     def _handle_view_notifications(self) -> None:

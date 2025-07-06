@@ -8,7 +8,6 @@ from exceptions.custom_exceptions import (
     NetworkError,
     DataProcessingError,
 )
-from constants.menu_options import MenuOptions
 
 
 class AdminService:
@@ -90,15 +89,7 @@ class AdminService:
 
 
 class AdminMenu(BaseMenu):
-
-    VIEW_SERVER_STATUS = MenuOptions.VIEW_SERVER_STATUS
-    VIEW_SERVER_DETAILS = MenuOptions.VIEW_SERVER_DETAILS
-    UPDATE_SERVER = MenuOptions.UPDATE_SERVER
-    ADD_CATEGORY = MenuOptions.ADD_CATEGORY
-    VIEW_REPORTED_ARTICLES = MenuOptions.VIEW_REPORTED_ARTICLES
-    HIDE_CATEGORY = MenuOptions.HIDE_CATEGORY
-    BLACKLIST_KEYWORD = MenuOptions.BLACKLIST_KEYWORD
-    LOGOUT = MenuOptions.ADMIN_LOGOUT
+    pass
 
     def __init__(self, api_client: APIClient):
         super().__init__()
@@ -110,21 +101,19 @@ class AdminMenu(BaseMenu):
                 self.print_header("Admin Menu")
                 choice = self._get_menu_choice()
 
-                if choice == self.VIEW_SERVER_STATUS:
-                    self._handle_view_server_status()
-                elif choice == self.VIEW_SERVER_DETAILS:
-                    self._handle_view_server_details()
-                elif choice == self.UPDATE_SERVER:
+                if choice == "1":
+                    self._handle_view_servers()
+                elif choice == "2":
                     self._handle_update_server()
-                elif choice == self.ADD_CATEGORY:
+                elif choice == "3":
                     self._handle_add_category()
-                elif choice == self.VIEW_REPORTED_ARTICLES:
-                    self._handle_view_reported_articles()
-                elif choice == self.HIDE_CATEGORY:
+                elif choice == "4":
+                    self._handle_view_reports()
+                elif choice == "5":
                     self._handle_hide_category()
-                elif choice == self.BLACKLIST_KEYWORD:
+                elif choice == "6":
                     self._handle_blacklist_keyword()
-                elif choice == self.LOGOUT:
+                elif choice == "7":
                     self.display_info("Logging out...")
                     return
                 else:
@@ -138,17 +127,16 @@ class AdminMenu(BaseMenu):
                 self.display_error("An unexpected error occurred. Please try again.")
 
     def _get_menu_choice(self) -> str:
-        print(f"[{self.VIEW_SERVER_STATUS}] View External Servers Status")
-        print(f"[{self.VIEW_SERVER_DETAILS}] View External Servers Details")
-        print(f"[{self.UPDATE_SERVER}] Update/Edit External Server API Key")
-        print(f"[{self.ADD_CATEGORY}] Add New News Category")
-        print(f"[{self.VIEW_REPORTED_ARTICLES}] View Reported Articles")
-        print(f"[{self.HIDE_CATEGORY}] Hide Category")
-        print(f"[{self.BLACKLIST_KEYWORD}] Blacklist Keyword")
-        print(f"[{self.LOGOUT}] Logout")
+        print("[1] View External Servers")
+        print("[2] Update Server API Key")
+        print("[3] Add Category")
+        print("[4] View Reported Articles")
+        print("[5] Hide Category")
+        print("[6] Blacklist Keyword")
+        print("[7] Logout")
         return input("Choice: ").strip()
 
-    def _handle_view_server_status(self) -> None:
+    def _handle_view_servers(self) -> None:
         try:
             servers = self.admin_service.get_external_servers()
 
@@ -175,24 +163,6 @@ class AdminMenu(BaseMenu):
         except Exception as e:
             self.logger.error(f"Error viewing server status: {e}")
             self.display_error("Failed to fetch external servers")
-
-        self.pause()
-
-    def _handle_view_server_details(self) -> None:
-        try:
-            details = self.admin_service.get_external_servers()
-
-            print("\nExternal Server Details:")
-            for detail in details:
-                name = detail["name"]
-                api_key = detail.get("api_key") or "<None>"
-                print(f"- {name}: API Key: {api_key}")
-
-        except DataProcessingError as e:
-            self.display_error(str(e))
-        except Exception as e:
-            self.logger.error(f"Error viewing server details: {e}")
-            self.display_error("Failed to fetch external server details")
 
         self.pause()
 
@@ -237,7 +207,7 @@ class AdminMenu(BaseMenu):
 
         self.pause()
 
-    def _handle_view_reported_articles(self) -> None:
+    def _handle_view_reports(self) -> None:
         try:
             reports = self.admin_service.get_reported_articles()
 

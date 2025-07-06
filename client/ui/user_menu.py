@@ -9,7 +9,6 @@ from exceptions.custom_exceptions import (
     DataProcessingError,
 )
 from ui.notification import NotificationMenu
-from constants.menu_options import MenuOptions
 
 
 class UserService:
@@ -124,22 +123,7 @@ class UserService:
 
 
 class UserMenu(BaseMenu):
-
-    HEADLINES = MenuOptions.HEADLINES
-    SAVED_ARTICLES = MenuOptions.SAVED_ARTICLES
-    SEARCH = MenuOptions.SEARCH
-    NOTIFICATIONS = MenuOptions.NOTIFICATIONS
-    LOGOUT = MenuOptions.LOGOUT
-
-    TODAY = MenuOptions.TODAY
-    DATE_RANGE = MenuOptions.DATE_RANGE
-    BACK = MenuOptions.BACK
-
-    BACK_OPTION = MenuOptions.BACK_OPTION
-    SAVE_ARTICLE = MenuOptions.SAVE_ARTICLE
-    LIKE_ARTICLE = MenuOptions.LIKE_ARTICLE
-    DISLIKE_ARTICLE = MenuOptions.DISLIKE_ARTICLE
-    REPORT_ARTICLE = MenuOptions.REPORT_ARTICLE
+    pass
 
     def __init__(self, api_client: APIClient):
         super().__init__()
@@ -152,15 +136,15 @@ class UserMenu(BaseMenu):
                 self.print_header("User Menu")
                 choice = self._get_menu_choice()
 
-                if choice == self.HEADLINES:
+                if choice == "1":
                     self._handle_headlines()
-                elif choice == self.SAVED_ARTICLES:
+                elif choice == "2":
                     self._handle_saved_articles()
-                elif choice == self.SEARCH:
+                elif choice == "3":
                     self._handle_search()
-                elif choice == self.NOTIFICATIONS:
+                elif choice == "4":
                     NotificationMenu(self.user_service.api_client).show()
-                elif choice == self.LOGOUT:
+                elif choice == "5":
                     self.display_info("Logging out...")
                     return
                 else:
@@ -174,11 +158,11 @@ class UserMenu(BaseMenu):
                 self.display_error("An unexpected error occurred. Please try again.")
 
     def _get_menu_choice(self) -> str:
-        print(f"[{self.HEADLINES}] Headlines")
-        print(f"[{self.SAVED_ARTICLES}] Saved Articles")
-        print(f"[{self.SEARCH}] Search")
-        print(f"[{self.NOTIFICATIONS}] Notifications")
-        print(f"[{self.LOGOUT}] Logout")
+        print("[1] Headlines")
+        print("[2] Saved Articles")
+        print("[3] Search")
+        print("[4] Notifications")
+        print("[5] Logout")
         return input("Choice: ").strip()
 
     def _handle_headlines(self) -> None:
@@ -186,16 +170,16 @@ class UserMenu(BaseMenu):
             try:
                 self.print_header("H E A D L I N E S")
                 print("Please choose the options below")
-                print(f"[{self.TODAY}] Today")
-                print(f"[{self.DATE_RANGE}] Date range")
-                print(f"[{self.BACK}] Back")
+                print("[1] Today")
+                print("[2] Date range")
+                print("[3] Back")
 
                 choice = input("Choice: ").strip()
-                if choice == self.TODAY:
+                if choice == "1":
                     self._handle_today_headlines()
-                elif choice == self.DATE_RANGE:
+                elif choice == "2":
                     self._handle_date_range_headlines()
-                elif choice == self.BACK:
+                elif choice == "3":
                     return
                 else:
                     self.display_error("Invalid choice.")
@@ -236,9 +220,9 @@ class UserMenu(BaseMenu):
 
             categories = self.user_service.get_categories()
             print("\nPlease choose the options below for Headlines")
-            print(f"[{self.TODAY}] All")
+            print("[1] All")
 
-            category_map = {self.TODAY: None}
+            category_map = {"1": None}
             for idx, cat in enumerate(categories, start=2):
                 print(f"[{idx}] {cat['name'].capitalize()}")
                 category_map[str(idx)] = cat["name"]
@@ -304,26 +288,26 @@ class UserMenu(BaseMenu):
     def _handle_article_interaction(self, article: Dict[str, Any]) -> None:
         while True:
             try:
-                print(f"{self.BACK_OPTION}. Back")
-                print(f"{self.SAVE_ARTICLE}. Save Article")
-                print(f"{self.LIKE_ARTICLE}. Like")
-                print(f"{self.DISLIKE_ARTICLE}. Dislike")
-                print(f"{self.REPORT_ARTICLE}. Report Article")
+                print("1. Back")
+                print("2. Save Article")
+                print("3. Like")
+                print("4. Dislike")
+                print("5. Report Article")
 
                 choice = input("Choice: ").strip()
 
-                if choice == self.BACK_OPTION:
+                if choice == "1":
                     return
-                elif choice == self.SAVE_ARTICLE:
+                elif choice == "2":
                     self._handle_save_article(article)
                     break
-                elif choice == self.LIKE_ARTICLE:
+                elif choice == "3":
                     self._handle_vote_article(article["id"], "like")
                     break
-                elif choice == self.DISLIKE_ARTICLE:
+                elif choice == "4":
                     self._handle_vote_article(article["id"], "dislike")
                     break
-                elif choice == self.REPORT_ARTICLE:
+                elif choice == "5":
                     self._handle_report_article(article["id"])
                     break
                 else:

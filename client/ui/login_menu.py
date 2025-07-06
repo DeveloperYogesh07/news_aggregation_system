@@ -8,7 +8,6 @@ from exceptions.custom_exceptions import (
     DataProcessingError,
 )
 from utils.validators import validate_email, validate_password, validate_username
-from constants.menu_options import MenuOptions
 
 
 class AuthenticationService:
@@ -109,10 +108,7 @@ class AuthenticationService:
 
 
 class LoginMenu(BaseMenu):
-
-    LOGIN_OPTION = MenuOptions.LOGIN
-    SIGNUP_OPTION = MenuOptions.SIGNUP
-    EXIT_OPTION = MenuOptions.EXIT
+    pass
 
     def __init__(self, api_client: APIClient):
         self.auth_service = AuthenticationService(api_client)
@@ -125,15 +121,15 @@ class LoginMenu(BaseMenu):
             try:
                 choice = self._get_user_choice()
 
-                if choice == self.LOGIN_OPTION:
+                if choice == "1":
                     user = self._handle_login()
                     if user:
                         return user
-                elif choice == self.SIGNUP_OPTION:
+                elif choice == "2":
                     user = self._handle_signup()
                     if user:
                         return user
-                elif choice == self.EXIT_OPTION:
+                elif choice == "0":
                     print("Goodbye!")
                     exit()
                 else:
@@ -147,9 +143,9 @@ class LoginMenu(BaseMenu):
                 print("An error occurred. Please try again.")
 
     def _get_user_choice(self) -> str:
-        print(f"[{self.LOGIN_OPTION}] Login")
-        print(f"[{self.SIGNUP_OPTION}] Signup")
-        print(f"[{self.EXIT_OPTION}] Exit")
+        print("[1] Login")
+        print("[2] Signup")
+        print("[0] Exit")
         return input("Choice: ").strip()
 
     def _handle_login(self) -> Optional[Dict[str, Any]]:

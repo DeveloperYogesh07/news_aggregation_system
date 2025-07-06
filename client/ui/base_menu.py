@@ -1,5 +1,6 @@
 import logging
 from typing import Optional
+from constants.ui_constants import UIConstants
 
 
 class BaseMenu:
@@ -15,7 +16,7 @@ class BaseMenu:
     def print_separator(self, length: int = 40) -> None:
         print("-" * length)
 
-    def pause(self, message: str = "Press Enter to continue...") -> None:
+    def pause(self, message: str = UIConstants.PAUSE_MESSAGE) -> None:
         input(f"\n{message}")
 
     def get_user_input(self, prompt: str, required: bool = True) -> Optional[str]:
@@ -33,7 +34,7 @@ class BaseMenu:
                 self.logger.error(f"Error getting user input: {e}")
                 print("An error occurred. Please try again.")
 
-    def confirm_action(self, message: str = "Are you sure? (y/n): ") -> bool:
+    def confirm_action(self, message: str = UIConstants.CONFIRMATION_MESSAGE) -> bool:
         while True:
             try:
                 response = input(message).strip().lower()
@@ -51,13 +52,13 @@ class BaseMenu:
                 print("An error occurred. Please try again.")
 
     def display_error(self, message: str) -> None:
-        print(f"\n❌ Error: {message}")
+        print(f"\n Error: {message}")
         self.logger.error(message)
 
     def display_success(self, message: str) -> None:
-        print(f"\n✅ {message}")
+        print(f"\n {message}")
         self.logger.info(message)
 
     def display_info(self, message: str) -> None:
-        print(f"\nℹ️  {message}")
+        print(f"\nℹ {message}")
         self.logger.info(message)
