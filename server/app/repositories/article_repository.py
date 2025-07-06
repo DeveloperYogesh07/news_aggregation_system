@@ -5,12 +5,22 @@ from app.models.article import Article
 from datetime import date, timedelta
 from sqlalchemy import and_
 from datetime import datetime, date
+from app.models.category import Category
+
 
 class ArticleRepository:
 
     @staticmethod
-    def create(db: Session, title: str, content: str, url: str = None, category: str = "general"):
-        db_article = Article(title=title, content=content,url= url,category=category or "general")
+    def create(
+        db: Session,
+        title: str,
+        content: str,
+        url: str = None,
+        category: str = "general",
+    ):
+        db_article = Article(
+            title=title, content=content, url=url, category=category or "general"
+        )
         db.add(db_article)
         db.commit()
         db.refresh(db_article)
@@ -18,7 +28,14 @@ class ArticleRepository:
 
     @staticmethod
     def get_all(db: Session, skip: int = 0, limit: int = 10):
-        return db.query(Article).offset(skip).limit(limit).all()
+        return (
+            db.query(Article)
+            .join(Category, Article.category == Category.name)
+            .filter(Article.is_hidden == False, Category.is_hidden == False)
+            .offset(skip)
+            .limit(limit)
+            .all()
+        )
 
     @staticmethod
     def get_by_id(db: Session, article_id: int):
@@ -26,29 +43,71 @@ class ArticleRepository:
 
     @staticmethod
     def search(db: Session, query: str):
-        return db.query(Article).filter(
-            or_(
-                Article.title.ilike(f"%{query}%"),
-                Article.content.ilike(f"%{query}%")
+        return (
+            db.query(Article)
+            .join(Category, Article.category == Category.name)
+            .filter(
+                Article.is_hidden == False,
+                Category.is_hidden == False,
+                or_(
+                    Article.title.ilike(f"%{query}%"),
+                    Article.content.ilike(f"%{query}%"),
+                ),
             )
-        ).order_by(Article.created_at.desc()).all()
-    
+            .order_by(Article.created_at.desc())
+            .all()
+        )
 
     @staticmethod
     def get_by_date(db: Session, article_date: date, category: str = None):
-        query = db.query(Article).filter(Article.created_at >= article_date, Article.created_at < article_date + timedelta(days=1))
+        query = (
+            db.query(Article)
+            .join(Category, Article.category == Category.name)
+            .filter(
+                Article.created_at >= article_date,
+                Article.created_at < article_date + timedelta(days=1),
+                Article.is_hidden == False,
+                Category.is_hidden == False,
+            )
+        )
         if category:
             query = query.filter(Article.category == category)
         return query.order_by(Article.created_at.desc()).all()
 
     @staticmethod
-    def get_by_date_range(db: Session, start_date: date, end_date: date, category: str = None):
-        query = db.query(Article).filter(
-            Article.created_at >= datetime.combine(start_date, datetime.min.time()),
-            Article.created_at <= datetime.combine(end_date, datetime.max.time())
+    def get_by_date_range(
+        db: Session, start_date: date, end_date: date, category: str = None
+    ):
+        query = (
+            db.query(Article)
+            .join(Category, Article.category == Category.name)
+            .filter(
+                Article.created_at >= datetime.combine(start_date, datetime.min.time()),
+                Article.created_at <= datetime.combine(end_date, datetime.max.time()),
+                Article.is_hidden == False,
+                Category.is_hidden == False,
+            )
         )
-
         if category:
             query = query.filter(Article.category == category)
-
         return query.order_by(Article.created_at.desc()).all()
+
+    @staticmethod
+    def hide_article(db, article_id):
+        article = db.query(Article).get(article_id)
+        if article:
+            article.is_hidden = True
+            db.commit()
+
+    @staticmethod
+    def get_visible_articles(db):
+        return db.query(Article).filter_by(is_hidden=False).all()
+
+    @staticmethod
+    def filter_articles_by_blacklist(db, blacklist):
+        query = db.query(Article).filter(Article.is_hidden == False)
+        for word in blacklist:
+            query = query.filter(
+                ~Article.title.contains(word), ~Article.content.contains(word)
+            )
+        return query.all()

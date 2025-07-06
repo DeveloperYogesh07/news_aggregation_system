@@ -1,6 +1,16 @@
-from sqlalchemy import Column, Integer, String, Text, ForeignKey, DateTime, func
+from sqlalchemy import (
+    Column,
+    Integer,
+    String,
+    Text,
+    ForeignKey,
+    DateTime,
+    func,
+    Boolean,
+)
 from sqlalchemy.orm import relationship
 from app.core.database import Base
+
 
 class Article(Base):
     __tablename__ = "articles"
@@ -11,5 +21,5 @@ class Article(Base):
     created_at = Column(DateTime(timezone=True), server_default=func.now())
     url = Column(String)
     category = Column(String, nullable=True)
+    is_hidden = Column(Boolean, default=False)
     votes = relationship("ArticleVote", back_populates="article", cascade="all, delete")
-

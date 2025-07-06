@@ -7,7 +7,7 @@ class Settings(BaseSettings):
     SECRET_KEY: str = "supersecretkey"
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 30
 
-    SQLALCHEMY_DATABASE_URI: ClassVar[str] = "sqlite:///./test.db"
+    SQLALCHEMY_DATABASE_URI: ClassVar[str] = "sqlite:///./database.db"
 
     SMTP_SERVER: str = "smtp.gmail.com"
     SMTP_PORT: int = 587

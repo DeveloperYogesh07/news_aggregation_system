@@ -11,6 +11,7 @@ from app.schemas.article import ArticleRead
 from datetime import date
 from typing import List, Optional
 from app.repositories.vote_repository import VoteRepository
+from app.repositories.article_report_repository import ArticleReportRepository
 
 router = APIRouter()
 
@@ -67,5 +68,18 @@ def get_articles_by_date(
 @router.get("/votes/{article_id}/count")
 def get_vote_count(article_id: int, db: Session = Depends(get_db)):
     return VoteRepository.count_votes(db, article_id)
+
+
+@router.post("/report/{article_id}")
+def report_article(article_id: int, db: Session = Depends(get_db), user: User = Depends(get_current_user)):
+    ArticleReportRepository.create(db, article_id, user.id)
+    count = ArticleReportRepository.count_reports(db, article_id)
+
+    THRESHOLD = 5
+    if count >= THRESHOLD:
+        ArticleRepository.hide_article(db, article_id)
+
+    return {"message": "Article reported successfully"}
+
 
 

@@ -166,23 +166,23 @@ class UserMenu(BaseMenu):
         print(f"URL: {article.get('url', '-')}")
         print("-" * 40)
 
-        try:
-            vote_data = self.api_client.get(f"/articles/votes/{article['id']}/count")
-            print(f"👍 Likes: {vote_data['likes']} | 👎 Dislikes: {vote_data['dislikes']}")
-        except Exception as e:
-            print(f"(Could not fetch vote count: {e})")
-
         while True:
-            choice = input("1. Back\n2. Save Article\n3. Like\n4. Dislike\nChoice: ").strip()
+            choice = input("1. Back\n2. Save Article\n3. Like\n4. Dislike\n5. Report Article\nChoice: ").strip()
 
             if choice == "1":
                 return
             elif choice == "2":
                 self.save_article(article)
+                break
             elif choice == "3":
                 self.vote_article(article["id"], "like")
+                break
             elif choice == "4":
                 self.vote_article(article["id"], "dislike")
+                break
+            elif choice == "5":
+                self.report_article(article["id"])
+                break
             else:
                 print("Invalid choice.")
 
@@ -212,3 +212,11 @@ class UserMenu(BaseMenu):
             print(f"You {vote_type}d this article.")
         except Exception as e:
             print(f"Failed to vote: {e}")
+
+    def report_article(self, article_id):
+        try:
+            self.api_client.post(f"/articles/report/{article_id}")
+            print("Article reported.")
+        except Exception as e:
+            print(f"Failed to report article: {e}")
+
