@@ -10,7 +10,6 @@ from app.repositories.category_repository import CategoryRepository
 from app.models.notification import NotificationConfig, Notification
 from app.repositories.notification_repository import NotificationRepository
 from app.services.email_service import EmailService
-from app.models import article
 
 
 class NewsService:
@@ -21,24 +20,34 @@ class NewsService:
         self.classifier = CategoryClassifier()
 
     def get_articles(self, skip: int = 0, limit: int = 10):
-        return ArticleRepository.get_all(db=self.db, skip=skip, limit=limit)
+        return ArticleRepository.get_all(
+            self.db, skip=skip, limit=limit
+        )
 
     def get_article(self, article_id: int):
         return ArticleRepository.get_by_id(db=self.db, article_id=article_id)
-    
+
     def trigger_notifications(self, articles: list):
         print("[DEBUG] Triggering notifications for new articles...")
-        
+
         for article in articles:
             if not article.category:
                 continue
 
             # Get all users who have this category enabled
-            configs = self.db.query(NotificationConfig).filter_by(category=article.category, enabled=True).all()
-            keyword_configs = self.db.query(NotificationConfig).filter(
-                NotificationConfig.keyword.isnot(None),
-                NotificationConfig.enabled.is_(True)
-            ).all()
+            configs = (
+                self.db.query(NotificationConfig)
+                .filter_by(category=article.category, enabled=True)
+                .all()
+            )
+            keyword_configs = (
+                self.db.query(NotificationConfig)
+                .filter(
+                    NotificationConfig.keyword.isnot(None),
+                    NotificationConfig.enabled.is_(True),
+                )
+                .all()
+            )
 
             notified_users = set()
 
@@ -47,7 +56,7 @@ class NewsService:
                 if config.user_id in notified_users:
                     continue
                 message = f"New article in {article.category}: {article.title}"
-                self._create_and_send_notification(config.user_id, message,article.url)
+                self._create_and_send_notification(config.user_id, message, article.url)
                 notified_users.add(config.user_id)
 
             # Keyword-based notifications
@@ -60,12 +69,13 @@ class NewsService:
                     self._create_and_send_notification(config.user_id, message)
                     notified_users.add(config.user_id)
 
-    def _create_and_send_notification(self, user_id: int, message: str,url: str = None):
+    def _create_and_send_notification(
+        self, user_id: int, message: str, url: str = None
+    ):
         NotificationRepository.create(self.db, user_id=user_id, message=message)
 
         email_service = EmailService(self.db)
         email_service.send_notification_email(user_id, message, url)
-
 
     def fetch_and_store_top_headlines(self, category: str = None):
         client = NewsAPIClient()
