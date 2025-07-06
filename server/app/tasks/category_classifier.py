@@ -2,10 +2,6 @@ from typing import Optional
 
 
 class CategoryClassifier:
-    """
-    A basic keyword-based news category classifier.
-    Extendable to ML model later.
-    """
     keyword_map = {
         "business": ["market", "stock", "economy", "trade", "invest", "revenue"],
         "sports": ["soccer", "tennis", "cricket", "NBA", "FIFA", "goal", "match"],
