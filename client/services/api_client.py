@@ -51,21 +51,21 @@ class APIClient:
             if response.status_code in (401, 403):
                 self.logger.warning(f"Authentication failed: {response.status_code}")
                 raise AuthenticationError(
-                    "API request",
-                    f"Authentication failed: {response.status_code}",
+                    "login",
+                    "Invalid email or password",
                     response.status_code,
                 )
             else:
                 self.logger.error(f"HTTP error {response.status_code}: {response.text}")
                 raise NetworkError(
                     "API request",
-                    f"HTTP error {response.status_code}: {response.text}",
+                    "Server error occurred",
                     self._build_url(""),
                 )
         except ValueError as e:
             self.logger.error(f"Invalid JSON response: {e}")
             raise DataProcessingError(
-                "JSON parsing", f"Invalid JSON response: {e}", "API response"
+                "data processing", "Server returned invalid data", "API response"
             )
 
     def _make_request(
@@ -95,22 +95,26 @@ class APIClient:
         except Timeout:
             self.logger.error(f"Request timeout for {url}")
             raise NetworkError(
-                f"{method} request", f"Request timeout for {endpoint}", url
+                "connection", "Request timed out. Please try again.", url
             )
         except ConnectionError:
             self.logger.error(f"Connection error for {url}")
             raise NetworkError(
-                f"{method} request",
-                f"Unable to connect to server at {self.base_url}",
+                "connection",
+                "Unable to connect to server. Please check your connection.",
                 url,
             )
         except RequestException as e:
             self.logger.error(f"Request failed for {url}: {e}")
-            raise NetworkError(f"{method} request", f"Request failed: {e}", url)
+            raise NetworkError(
+                "connection", "Connection failed. Please try again.", url
+            )
         except Exception as e:
             self.logger.error(f"Unexpected error for {url}: {e}")
             raise DataProcessingError(
-                f"{method} request", f"Unexpected error: {e}", "API request"
+                "request",
+                "An unexpected error occurred. Please try again.",
+                "API request",
             )
 
     def get(

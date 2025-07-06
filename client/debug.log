@@ -78,3 +78,34 @@
 2025-07-06 23:44:25,360 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:8000
 2025-07-06 23:44:25,362 - urllib3.connectionpool - DEBUG - http://127.0.0.1:8000 "GET /api/v1/admin/reported-articles HTTP/1.1" 200 214
 2025-07-06 23:44:29,130 - AdminMenu - INFO - Logging out...
+2025-07-06 23:57:40,193 - __main__ - DEBUG - Starting News Aggregation System Client
+2025-07-06 23:57:53,359 - ui.login_menu - INFO - Attempting login for email: admin@gmail.com
+2025-07-06 23:57:53,359 - services.api_client - DEBUG - Making POST request to http://127.0.0.1:8000/api/v1/auth/login
+2025-07-06 23:57:53,376 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:8000
+2025-07-06 23:57:54,063 - urllib3.connectionpool - DEBUG - http://127.0.0.1:8000 "POST /api/v1/auth/login HTTP/1.1" 200 162
+2025-07-06 23:57:54,063 - services.api_client - DEBUG - Authentication token set
+2025-07-06 23:57:54,063 - ui.login_menu - INFO - Login successful for email: admin@gmail.com
+2025-07-06 23:57:54,063 - services.api_client - DEBUG - Making GET request to http://127.0.0.1:8000/api/v1/users/me
+2025-07-06 23:57:54,063 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:8000
+2025-07-06 23:57:54,087 - urllib3.connectionpool - DEBUG - http://127.0.0.1:8000 "GET /api/v1/users/me HTTP/1.1" 200 69
+2025-07-06 23:57:54,091 - __main__ - INFO - Admin session started for user: admin
+2025-07-06 23:57:58,236 - services.api_client - DEBUG - Making GET request to http://127.0.0.1:8000/api/v1/admin/external-sources
+2025-07-06 23:57:58,236 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:8000
+2025-07-06 23:57:58,243 - urllib3.connectionpool - DEBUG - http://127.0.0.1:8000 "GET /api/v1/admin/external-sources HTTP/1.1" 307 0
+2025-07-06 23:57:58,264 - urllib3.connectionpool - DEBUG - http://127.0.0.1:8000 "GET /api/v1/admin/external-sources/ HTTP/1.1" 200 321
+2025-07-06 23:58:02,079 - AdminMenu - INFO - Logging out...
+2025-07-06 23:58:22,436 - ui.login_menu - INFO - Attempting login for email: capisbest07@fmail.com
+2025-07-06 23:58:22,436 - services.api_client - DEBUG - Making POST request to http://127.0.0.1:8000/api/v1/auth/login
+2025-07-06 23:58:22,436 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:8000
+2025-07-06 23:58:22,443 - urllib3.connectionpool - DEBUG - http://127.0.0.1:8000 "POST /api/v1/auth/login HTTP/1.1" 401 38
+2025-07-06 23:58:22,452 - services.api_client - WARNING - Authentication failed: 401
+2025-07-06 23:58:22,453 - services.api_client - ERROR - Unexpected error for http://127.0.0.1:8000/api/v1/auth/login: Authentication error during API request: Authentication failed: 401
+2025-07-06 23:58:22,454 - ui.login_menu - ERROR - Data processing error during login: Data processing error during POST request: Unexpected error: Authentication error during API request: Authentication failed: 401
+2025-07-07 00:01:45,921 - __main__ - DEBUG - Starting News Aggregation System Client
+2025-07-07 00:02:08,627 - ui.login_menu - INFO - Attempting login for email: steave@gmail.com
+2025-07-07 00:02:08,627 - services.api_client - DEBUG - Making POST request to http://127.0.0.1:8000/api/v1/auth/login
+2025-07-07 00:02:08,651 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:8000
+2025-07-07 00:02:08,761 - urllib3.connectionpool - DEBUG - http://127.0.0.1:8000 "POST /api/v1/auth/login HTTP/1.1" 401 38
+2025-07-07 00:02:08,765 - services.api_client - WARNING - Authentication failed: 401
+2025-07-07 00:02:08,766 - services.api_client - ERROR - Unexpected error for http://127.0.0.1:8000/api/v1/auth/login: Authentication error during login: Invalid email or password
+2025-07-07 00:02:08,766 - ui.login_menu - ERROR - Data processing error during login: Data processing error during request: An unexpected error occurred. Please try again.

@@ -39,19 +39,17 @@ class AuthenticationService:
             return profile
 
         except AuthenticationError:
-            print("Login failed. Please check your email and password.")
+            print("Invalid email or password. Please try again.")
             return None
-        except NetworkError as e:
-            self.logger.error(f"Network error during login: {e}")
-            print("Network error. Please check your connection and try again.")
+        except NetworkError:
+            print("Connection error. Please check your internet connection.")
             return None
-        except DataProcessingError as e:
-            self.logger.error(f"Data processing error during login: {e}")
-            print("Login failed due to server error. Please try again later.")
+        except DataProcessingError:
+            print("Server error. Please try again later.")
             return None
         except Exception as e:
             self.logger.error(f"Unexpected error during login: {e}")
-            print("An unexpected error occurred. Please try again.")
+            print("An error occurred. Please try again.")
             return None
 
     def signup(
@@ -87,19 +85,16 @@ class AuthenticationService:
 
             return profile
 
-        except AuthenticationError as e:
-            self.logger.warning(f"Signup failed - authentication error: {e}")
-            print("Signup failed. The email might already be registered.")
+        except AuthenticationError:
+            print("Email already registered. Please use a different email.")
             return None
-        except NetworkError as e:
-            self.logger.error(f"Network error during signup: {e}")
-            print("Network error. Please check your connection and try again.")
+        except NetworkError:
+            print("Connection error. Please check your internet connection.")
             return None
-        except DataProcessingError as e:
-            self.logger.error(f"Data processing error during signup: {e}")
-            print("Signup failed due to server error. Please try again later.")
+        except DataProcessingError:
+            print("Server error. Please try again later.")
             return None
         except Exception as e:
             self.logger.error(f"Unexpected error during signup: {e}")
-            print("An unexpected error occurred. Please try again.")
+            print("An error occurred. Please try again.")
             return None
