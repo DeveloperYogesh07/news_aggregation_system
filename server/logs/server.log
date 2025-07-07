@@ -188,3 +188,9 @@
 2025-07-07 12:14:38,754 - app.services.news_service - DEBUG - Retrieved 10 articles
 2025-07-07 12:15:14,854 - app.services.auth_service - INFO - Authentication attempt for email: admin@gmail.com
 2025-07-07 12:15:15,094 - app.services.auth_service - INFO - Authentication successful for user: admin
+2025-07-07 19:58:13,153 - tzlocal - DEBUG - Looking up time zone info from registry
+2025-07-07 19:58:13,184 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-07-07 19:58:13,184 - apscheduler.scheduler - INFO - Added job "fetch_external_news_periodically" to job store "default"
+2025-07-07 19:58:13,184 - apscheduler.scheduler - INFO - Scheduler started
+2025-07-07 19:58:13,184 - apscheduler.scheduler - DEBUG - Looking for jobs to run
+2025-07-07 19:58:13,184 - apscheduler.scheduler - DEBUG - Next wakeup is due at 2025-07-07 20:28:13.184201+05:30 (in 1800.000000 seconds)
