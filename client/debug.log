@@ -428,3 +428,70 @@
 2025-07-07 09:37:12,778 - services.api_client - DEBUG - Response status: 200, content: {"id":2,"username":"admin","email":"admin@gmail.com","is_admin":true}
 2025-07-07 09:37:12,779 - __main__ - INFO - Admin session started for user: admin
 2025-07-07 09:37:18,447 - AdminMenu - INFO - Logging out...
+2025-07-07 10:02:24,497 - __main__ - DEBUG - Starting News Aggregation System Client
+2025-07-07 10:02:31,873 - ui.login_menu - INFO - Attempting login for email: yogesh@gmail.com
+2025-07-07 10:02:31,874 - services.api_client - DEBUG - Making POST request to http://127.0.0.1:8000/api/v1/auth/login
+2025-07-07 10:02:31,877 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:8000
+2025-07-07 10:02:31,912 - urllib3.connectionpool - DEBUG - http://127.0.0.1:8000 "POST /api/v1/auth/login HTTP/1.1" 401 38
+2025-07-07 10:02:31,927 - services.api_client - DEBUG - Response status: 401, content: {"detail":"Invalid email or password"}
+2025-07-07 10:02:31,928 - services.api_client - WARNING - Authentication failed: 401
+2025-07-07 10:02:38,844 - ui.login_menu - INFO - Attempting login for email: test@gmail.com
+2025-07-07 10:02:38,844 - services.api_client - DEBUG - Making POST request to http://127.0.0.1:8000/api/v1/auth/login
+2025-07-07 10:02:38,847 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:8000
+2025-07-07 10:02:39,115 - urllib3.connectionpool - DEBUG - http://127.0.0.1:8000 "POST /api/v1/auth/login HTTP/1.1" 401 38
+2025-07-07 10:02:39,126 - services.api_client - DEBUG - Response status: 401, content: {"detail":"Invalid email or password"}
+2025-07-07 10:02:39,127 - services.api_client - WARNING - Authentication failed: 401
+2025-07-07 10:02:47,127 - ui.login_menu - INFO - Attempting login for email: test@gmail.com
+2025-07-07 10:02:47,127 - services.api_client - DEBUG - Making POST request to http://127.0.0.1:8000/api/v1/auth/login
+2025-07-07 10:02:47,133 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:8000
+2025-07-07 10:02:47,377 - urllib3.connectionpool - DEBUG - http://127.0.0.1:8000 "POST /api/v1/auth/login HTTP/1.1" 200 162
+2025-07-07 10:02:47,377 - services.api_client - DEBUG - Response status: 200, content: {"access_token":"***MASKED***","token_type":"bearer"}
+2025-07-07 10:02:47,377 - services.api_client - DEBUG - Authentication token set
+2025-07-07 10:02:47,377 - ui.login_menu - INFO - Login successful for email: test@gmail.com
+2025-07-07 10:02:47,377 - services.api_client - DEBUG - Making GET request to http://127.0.0.1:8000/api/v1/users/me
+2025-07-07 10:02:47,392 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:8000
+2025-07-07 10:02:47,396 - urllib3.connectionpool - DEBUG - http://127.0.0.1:8000 "GET /api/v1/users/me HTTP/1.1" 200 68
+2025-07-07 10:02:47,403 - services.api_client - DEBUG - Response status: 200, content: {"id":3,"username":"test","email":"test@gmail.com","is_admin":false}
+2025-07-07 10:02:47,403 - __main__ - INFO - User session started for user: test
+2025-07-07 10:02:50,626 - services.api_client - DEBUG - Making GET request to http://127.0.0.1:8000/api/v1/articles/
+2025-07-07 10:02:50,626 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:8000
+2025-07-07 10:02:50,643 - urllib3.connectionpool - DEBUG - http://127.0.0.1:8000 "GET /api/v1/articles/?date=2025-07-07 HTTP/1.1" 200 3960
+2025-07-07 10:02:50,644 - services.api_client - DEBUG - Response status: 200, content: [{"title":"Hamas prepared to negotiate over implementation of ceasefire proposal - The Washington Post","content":"Hamas issued a “positive response” to a proposal put forward by Egyptian and Qatari m
+2025-07-07 10:33:13,026 - __main__ - DEBUG - Starting News Aggregation System Client
+2025-07-07 10:33:20,165 - ui.login_menu - INFO - Attempting login for email: test@gmail.com
+2025-07-07 10:33:20,175 - services.api_client - DEBUG - Making POST request to http://127.0.0.1:8000/api/v1/auth/login
+2025-07-07 10:33:20,191 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:8000
+2025-07-07 10:33:20,720 - urllib3.connectionpool - DEBUG - http://127.0.0.1:8000 "POST /api/v1/auth/login HTTP/1.1" 200 162
+2025-07-07 10:33:20,720 - services.api_client - DEBUG - Response status: 200, content: {"access_token":"***MASKED***","token_type":"bearer"}
+2025-07-07 10:33:20,722 - services.api_client - DEBUG - Authentication token set
+2025-07-07 10:33:20,722 - ui.login_menu - INFO - Login successful for email: test@gmail.com
+2025-07-07 10:33:20,722 - services.api_client - DEBUG - Making GET request to http://127.0.0.1:8000/api/v1/users/me
+2025-07-07 10:33:20,723 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:8000
+2025-07-07 10:33:20,736 - urllib3.connectionpool - DEBUG - http://127.0.0.1:8000 "GET /api/v1/users/me HTTP/1.1" 200 68
+2025-07-07 10:33:20,745 - services.api_client - DEBUG - Response status: 200, content: {"id":3,"username":"test","email":"test@gmail.com","is_admin":false}
+2025-07-07 10:33:20,746 - __main__ - INFO - User session started for user: test
+2025-07-07 10:33:25,402 - services.api_client - DEBUG - Making GET request to http://127.0.0.1:8000/api/v1/articles/search
+2025-07-07 10:33:25,402 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:8000
+2025-07-07 10:33:25,419 - urllib3.connectionpool - DEBUG - http://127.0.0.1:8000 "GET /api/v1/articles/search?query=trump HTTP/1.1" 200 5422
+2025-07-07 10:33:25,422 - services.api_client - DEBUG - Response status: 200, content: [{"title":"Russia pummels Kyiv with drones and missiles after Putin-Trump call - The Washington Post","content":"After his call with Putin, Trump said he did not think the Russian leader wanted a ceas
+2025-07-07 10:33:32,657 - services.api_client - DEBUG - Making GET request to http://127.0.0.1:8000/api/v1/notifications/history
+2025-07-07 10:33:32,669 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:8000
+2025-07-07 10:33:32,685 - urllib3.connectionpool - DEBUG - http://127.0.0.1:8000 "GET /api/v1/notifications/history HTTP/1.1" 200 2
+2025-07-07 10:33:32,692 - services.api_client - DEBUG - Response status: 200, content: []
+2025-07-07 10:33:32,695 - NotificationMenu - INFO - No notifications yet.
+2025-07-07 10:33:35,032 - services.api_client - DEBUG - Making GET request to http://127.0.0.1:8000/api/v1/notifications/
+2025-07-07 10:33:35,032 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:8000
+2025-07-07 10:33:35,062 - urllib3.connectionpool - DEBUG - http://127.0.0.1:8000 "GET /api/v1/notifications/ HTTP/1.1" 200 308
+2025-07-07 10:33:35,065 - services.api_client - DEBUG - Response status: 200, content: [{"id":4,"category":"general","keyword":null,"enabled":true},{"id":5,"category":"technology","keyword":null,"enabled":true},{"id":6,"category":"entertainment","keyword":null,"enabled":false},{"id":7,"
+2025-07-07 10:33:41,052 - services.api_client - DEBUG - Making PUT request to http://127.0.0.1:8000/api/v1/notifications/keywords
+2025-07-07 10:33:41,059 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:8000
+2025-07-07 10:33:41,105 - urllib3.connectionpool - DEBUG - http://127.0.0.1:8000 "PUT /api/v1/notifications/keywords HTTP/1.1" 200 30
+2025-07-07 10:33:41,105 - services.api_client - DEBUG - Response status: 200, content: {"message":"Keywords updated"}
+2025-07-07 10:33:41,105 - NotificationMenu - INFO - Keywords updated successfully.
+2025-07-07 10:33:44,037 - NotificationMenu - INFO - Logging out...
+2025-07-07 10:33:46,191 - services.api_client - DEBUG - Making GET request to http://127.0.0.1:8000/api/v1/notifications/history
+2025-07-07 10:33:46,193 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:8000
+2025-07-07 10:33:46,221 - urllib3.connectionpool - DEBUG - http://127.0.0.1:8000 "GET /api/v1/notifications/history HTTP/1.1" 200 2
+2025-07-07 10:33:46,223 - services.api_client - DEBUG - Response status: 200, content: []
+2025-07-07 10:33:46,225 - NotificationMenu - INFO - No notifications yet.
+2025-07-07 10:33:51,248 - UserMenu - INFO - Logging out...

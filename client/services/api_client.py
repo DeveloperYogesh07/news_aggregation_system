@@ -44,7 +44,14 @@ class APIClient:
         return headers
 
     def _handle_response(self, response: requests.Response) -> Dict[str, Any]:
-        self.logger.debug(f"Response status: {response.status_code}, content: {response.text[:200]}")
+        # Log response without sensitive data
+        log_content = response.text[:200]
+        if "access_token" in log_content:
+            # Mask JWT tokens in logs
+            import re
+            log_content = re.sub(r'"access_token":"[^"]*"', '"access_token":"***MASKED***"', log_content)
+        
+        self.logger.debug(f"Response status: {response.status_code}, content: {log_content}")
         try:
             response.raise_for_status()
             return response.json()
