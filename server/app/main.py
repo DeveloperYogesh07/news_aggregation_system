@@ -1,11 +1,14 @@
 from fastapi import FastAPI
 from app.core.config import settings
+from app.core.logging import setup_logger
 from app.api.v1 import auth, users, articles, notifications, admin, saved_articles
 from app.tasks.scheduler import start_scheduler
 from app.core.database import engine, Base
 from app.api.v1 import admin_creation
 from app.api.v1 import categories
 from app.api.v1 import votes
+
+setup_logger()
 
 Base.metadata.create_all(bind=engine)
 

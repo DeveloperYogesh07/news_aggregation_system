@@ -1,3 +1,4 @@
+import logging
 from sqlalchemy.orm import Session
 from app.core.security import verify_password, get_password_hash, create_access_token
 from app.repositories.user_repository import UserRepository
@@ -14,6 +15,7 @@ class AuthService:
 
     def __init__(self, db: Session):
         self.db = db
+        self.logger = logging.getLogger(__name__)
 
     def authenticate_user(self, email: str, password: str) -> Token:
         try:
@@ -22,15 +24,20 @@ class AuthService:
                     "Email and password are required", field="credentials"
                 )
 
+            self.logger.info(f"Authentication attempt for email: {email}")
             user = UserRepository.get_by_email(self.db, email)
+
             if not user or not verify_password(password, user.hashed_password):  # type: ignore
+                self.logger.warning(f"Authentication failed for email: {email}")
                 raise AuthenticationException("Invalid email or password")
 
             token = create_access_token({"user_id": user.id})
+            self.logger.info(f"Authentication successful for user: {user.username}")
             return Token(access_token=token)
         except (AuthenticationException, ValidationException):
             raise
         except Exception as e:
+            self.logger.error(f"Authentication error for {email}: {e}")
             raise AuthenticationException(f"Authentication failed: {str(e)}")
 
     def register_user(self, user_create: UserCreate) -> Token:
@@ -44,8 +51,12 @@ class AuthService:
                     "Username, email, and password are required", field="user_data"
                 )
 
+            self.logger.info(f"Registration attempt for email: {user_create.email}")
             existing_user = UserRepository.get_by_email(self.db, user_create.email)
             if existing_user:
+                self.logger.warning(
+                    f"Registration failed - email already exists: {user_create.email}"
+                )
                 raise UserException(
                     "User with this email already exists", operation="register"
                 )
@@ -55,10 +66,12 @@ class AuthService:
                 self.db, user_create.username, user_create.email, hashed_pw
             )
             token = create_access_token({"user_id": new_user.id})
+            self.logger.info(f"Registration successful for user: {new_user.username}")
             return Token(access_token=token)
         except (ValidationException, UserException):
             raise
         except Exception as e:
+            self.logger.error(f"Registration error for {user_create.email}: {e}")
             raise UserException(
                 f"User registration failed: {str(e)}", operation="register"
             )

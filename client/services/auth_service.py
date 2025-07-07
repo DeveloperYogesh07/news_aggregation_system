@@ -5,6 +5,7 @@ from exceptions.custom_exceptions import (
     AuthenticationError,
     NetworkError,
     DataProcessingError,
+    ClientError,
 )
 from utils.validators import validate_email, validate_password, validate_username
 
@@ -32,23 +33,38 @@ class AuthenticationService:
             self.api_client.set_token(response["access_token"])
             self.logger.info(f"Login successful for email: {email}")
 
-            profile = self.api_client.get("/users/me")
-            print("Login successful.")
-            print(f"Welcome, {profile['username']}!")
+            try:
+                profile = self.api_client.get("/users/me")
+                print("Login successful.")
+                print(f"Welcome, {profile['username']}!")
+                return profile
+            except Exception as profile_error:
+                self.logger.warning(
+                    f"Failed to fetch profile but login was successful: {profile_error}"
+                )
+                print("Login successful.")
+                print("Welcome!")
+                # Return a basic profile with email since we have the token
+                return {"email": email, "username": email.split("@")[0]}
 
-            return profile
-
-        except AuthenticationError:
+        except AuthenticationError as e:
+            self.logger.warning(f"Authentication failed: {e} (type: {type(e).__name__})")
             print("Invalid email or password. Please try again.")
             return None
-        except NetworkError:
+        except NetworkError as e:
+            self.logger.warning(f"Network error: {e} (type: {type(e).__name__})")
             print("Connection error. Please check your internet connection.")
             return None
-        except DataProcessingError:
+        except DataProcessingError as e:
+            self.logger.error(f"Data processing error: {e} (type: {type(e).__name__})")
             print("Server error. Please try again later.")
             return None
+        except ClientError as e:
+            self.logger.error(f"Client error during login: {e} (type: {type(e).__name__})")
+            print("An error occurred. Please try again.")
+            return None
         except Exception as e:
-            self.logger.error(f"Unexpected error during login: {e}")
+            self.logger.error(f"Unexpected error during login: {e} (type: {type(e).__name__})")
             print("An error occurred. Please try again.")
             return None
 

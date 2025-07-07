@@ -44,6 +44,7 @@ class APIClient:
         return headers
 
     def _handle_response(self, response: requests.Response) -> Dict[str, Any]:
+        self.logger.debug(f"Response status: {response.status_code}, content: {response.text[:200]}")
         try:
             response.raise_for_status()
             return response.json()
@@ -55,11 +56,18 @@ class APIClient:
                     "Invalid email or password",
                     response.status_code,
                 )
+            elif response.status_code >= 500:
+                self.logger.error(f"Server error {response.status_code}: {response.text}")
+                raise DataProcessingError(
+                    "server",
+                    "Server error occurred",
+                    f"HTTP {response.status_code}",
+                )
             else:
                 self.logger.error(f"HTTP error {response.status_code}: {response.text}")
                 raise NetworkError(
                     "API request",
-                    "Server error occurred",
+                    f"Request failed with status {response.status_code}",
                     self._build_url(""),
                 )
         except ValueError as e:
@@ -109,6 +117,9 @@ class APIClient:
             raise NetworkError(
                 "connection", "Connection failed. Please try again.", url
             )
+        except (AuthenticationError, NetworkError, DataProcessingError):
+            # Re-raise these specific exceptions without wrapping them
+            raise
         except Exception as e:
             self.logger.error(f"Unexpected error for {url}: {e}")
             raise DataProcessingError(
