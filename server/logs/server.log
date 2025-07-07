@@ -126,3 +126,65 @@
 2025-07-07 10:33:20,262 - passlib.handlers.bcrypt - DEBUG - detected 'bcrypt' backend, version '4.0.1'
 2025-07-07 10:33:20,262 - passlib.handlers.bcrypt - DEBUG - 'bcrypt' backend lacks $2$ support, enabling workaround
 2025-07-07 10:33:20,713 - app.services.auth_service - INFO - Authentication successful for user: test
+2025-07-07 11:15:21,265 - tzlocal - DEBUG - Looking up time zone info from registry
+2025-07-07 11:15:21,297 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-07-07 11:15:21,297 - apscheduler.scheduler - INFO - Added job "fetch_external_news_periodically" to job store "default"
+2025-07-07 11:15:21,297 - apscheduler.scheduler - INFO - Scheduler started
+2025-07-07 11:15:21,297 - apscheduler.scheduler - DEBUG - Looking for jobs to run
+2025-07-07 11:15:21,313 - apscheduler.scheduler - DEBUG - Next wakeup is due at 2025-07-07 11:45:21.297371+05:30 (in 1799.984355 seconds)
+2025-07-07 11:15:24,509 - app.services.auth_service - INFO - Authentication attempt for email: admin@gmail.com
+2025-07-07 11:15:24,526 - passlib.handlers.bcrypt - DEBUG - detected 'bcrypt' backend, version '4.0.1'
+2025-07-07 11:15:24,526 - passlib.handlers.bcrypt - DEBUG - 'bcrypt' backend lacks $2$ support, enabling workaround
+2025-07-07 11:15:25,032 - app.services.auth_service - INFO - Authentication successful for user: admin
+2025-07-07 11:19:04,450 - tzlocal - DEBUG - Looking up time zone info from registry
+2025-07-07 11:19:04,476 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-07-07 11:19:04,476 - apscheduler.scheduler - INFO - Added job "fetch_external_news_periodically" to job store "default"
+2025-07-07 11:19:04,476 - apscheduler.scheduler - INFO - Scheduler started
+2025-07-07 11:19:04,476 - apscheduler.scheduler - DEBUG - Looking for jobs to run
+2025-07-07 11:19:04,492 - apscheduler.scheduler - DEBUG - Next wakeup is due at 2025-07-07 11:49:04.476644+05:30 (in 1799.984348 seconds)
+2025-07-07 11:19:17,695 - app.services.auth_service - INFO - Authentication attempt for email: capisbest07@gmail.com
+2025-07-07 11:19:17,732 - passlib.handlers.bcrypt - DEBUG - detected 'bcrypt' backend, version '4.0.1'
+2025-07-07 11:19:17,732 - passlib.handlers.bcrypt - DEBUG - 'bcrypt' backend lacks $2$ support, enabling workaround
+2025-07-07 11:19:18,285 - app.services.auth_service - INFO - Authentication successful for user: cap
+2025-07-07 11:49:04,511 - apscheduler.scheduler - DEBUG - Looking for jobs to run
+2025-07-07 11:49:04,511 - apscheduler.executors.default - INFO - Running job "fetch_external_news_periodically (trigger: interval[0:30:00], next run at: 2025-07-07 11:49:04 IST)" (scheduled at 2025-07-07 11:49:04.476644+05:30)
+2025-07-07 11:49:04,511 - apscheduler.scheduler - DEBUG - Next wakeup is due at 2025-07-07 12:19:04.476644+05:30 (in 1799.965243 seconds)
+2025-07-07 11:49:04,511 - app.services.news_service - INFO - Fetching headlines for category: general
+2025-07-07 11:49:04,511 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-07-07 11:49:04,543 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\yogesh.upadhyay\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\certifi\\cacert.pem'
+2025-07-07 11:49:05,716 - httpcore.connection - DEBUG - connect_tcp.started host='newsapi.org' port=443 local_address=None timeout=5.0 socket_options=None
+2025-07-07 11:49:05,847 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001D310E8D760>
+2025-07-07 11:49:05,847 - httpcore.connection - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x000001D310CB21D0> server_hostname='newsapi.org' timeout=5.0
+2025-07-07 11:49:05,923 - httpcore.connection - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001D310312B10>
+2025-07-07 11:49:05,923 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2025-07-07 11:49:05,923 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-07-07 11:49:05,923 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2025-07-07 11:49:05,923 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-07-07 11:49:05,923 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2025-07-07 11:49:06,303 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Mon, 07 Jul 2025 06:19:06 GMT'), (b'Content-Type', b'application/json; charset=utf-8'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Content-Encoding', b'gzip'), (b'Cache-Control', b'no-cache'), (b'Pragma', b'no-cache'), (b'Expires', b'-1'), (b'X-Cached-Result', b'false'), (b'cf-cache-status', b'DYNAMIC'), (b'Report-To', b'{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=wm78kuXY8jseYL5GQcraVAmYJnHRk7W6C1CUD71xRHPYccSRchWP8oHfOTDz1oeWyKKcsTsNhNJgFEy9W%2Bkl2W5ruDoclpznVcxv8FKqerkZl%2BcFi5d6eXz%2BB26M"}],"group":"cf-nel","max_age":604800}'), (b'NEL', b'{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'), (b'Server', b'cloudflare'), (b'CF-RAY', b'95b53a7228f43b09-BOM'), (b'server-timing', b'cfL4;desc="?proto=TCP&rtt=42837&min_rtt=42745&rtt_var=16214&sent=4&recv=6&lost=0&retrans=0&sent_bytes=2843&recv_bytes=847&delivery_rate=67149&cwnd=249&unsent_bytes=0&cid=71ec1ba375a1e1cb&ts=350&x=0"')])
+2025-07-07 11:49:06,305 - httpx - INFO - HTTP Request: GET https://newsapi.org/v2/top-headlines?apiKey=08999c2c0fb44ff29c4352f27d402246&country=us&pageSize=10&category= "HTTP/1.1 200 OK"
+2025-07-07 11:49:06,325 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2025-07-07 11:49:06,328 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-07-07 11:49:06,328 - httpcore.http11 - DEBUG - response_closed.started
+2025-07-07 11:49:06,328 - httpcore.http11 - DEBUG - response_closed.complete
+2025-07-07 11:49:06,328 - httpcore.connection - DEBUG - close.started
+2025-07-07 11:49:06,328 - httpcore.connection - DEBUG - close.complete
+2025-07-07 11:49:06,366 - app.services.news_service - INFO - Fetched 9 headlines
+2025-07-07 11:49:53,813 - app.services.news_service - INFO - Stored 9 new articles
+2025-07-07 11:49:53,813 - apscheduler.executors.default - INFO - Job "fetch_external_news_periodically (trigger: interval[0:30:00], next run at: 2025-07-07 12:19:04 IST)" executed successfully
+2025-07-07 12:13:46,300 - tzlocal - DEBUG - Looking up time zone info from registry
+2025-07-07 12:13:46,316 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-07-07 12:13:46,316 - apscheduler.scheduler - INFO - Added job "fetch_external_news_periodically" to job store "default"
+2025-07-07 12:13:46,316 - apscheduler.scheduler - INFO - Scheduler started
+2025-07-07 12:13:46,316 - apscheduler.scheduler - DEBUG - Looking for jobs to run
+2025-07-07 12:13:46,332 - apscheduler.scheduler - DEBUG - Next wakeup is due at 2025-07-07 12:43:46.316373+05:30 (in 1799.984371 seconds)
+2025-07-07 12:14:28,103 - app.services.auth_service - INFO - Registration attempt for email: test1@gmail.com
+2025-07-07 12:14:28,119 - passlib.handlers.bcrypt - DEBUG - detected 'bcrypt' backend, version '4.0.1'
+2025-07-07 12:14:28,119 - passlib.handlers.bcrypt - DEBUG - 'bcrypt' backend lacks $2$ support, enabling workaround
+2025-07-07 12:14:28,397 - app.services.auth_service - INFO - Registration successful for user: test1
+2025-07-07 12:14:36,059 - app.services.auth_service - INFO - Authentication attempt for email: capisbest07@gmail.com
+2025-07-07 12:14:36,284 - app.services.auth_service - INFO - Authentication successful for user: cap
+2025-07-07 12:14:38,753 - app.services.news_service - DEBUG - Fetching articles with skip=0, limit=10
+2025-07-07 12:14:38,754 - app.services.news_service - DEBUG - Retrieved 10 articles
+2025-07-07 12:15:14,854 - app.services.auth_service - INFO - Authentication attempt for email: admin@gmail.com
+2025-07-07 12:15:15,094 - app.services.auth_service - INFO - Authentication successful for user: admin
