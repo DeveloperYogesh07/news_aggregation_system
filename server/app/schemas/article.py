@@ -1,12 +1,15 @@
 from pydantic import BaseModel
 from typing import Optional
 
+
 class ArticleBase(BaseModel):
     title: str
     content: str
 
+
 class ArticleCreate(ArticleBase):
     pass
+
 
 class ArticleRead(ArticleBase):
     id: int
@@ -16,4 +19,4 @@ class ArticleRead(ArticleBase):
     category: Optional[str]
 
     class Config:
-        orm_mode = True
+        from_attributes = True

@@ -1,0 +1,196 @@
+2025-07-07 08:35:34,115 - tzlocal - DEBUG - Looking up time zone info from registry
+2025-07-07 08:35:34,146 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-07-07 08:35:34,146 - apscheduler.scheduler - INFO - Added job "fetch_external_news_periodically" to job store "default"
+2025-07-07 08:35:34,146 - apscheduler.scheduler - INFO - Scheduler started
+2025-07-07 08:35:34,146 - apscheduler.scheduler - DEBUG - Looking for jobs to run
+2025-07-07 08:35:34,162 - apscheduler.scheduler - DEBUG - Next wakeup is due at 2025-07-07 09:05:34.146974+05:30 (in 1799.984383 seconds)
+2025-07-07 08:35:47,043 - app.services.auth_service - INFO - Authentication attempt for email: yogesh@gmail.com
+2025-07-07 08:35:47,074 - app.services.auth_service - WARNING - Authentication failed for email: yogesh@gmail.com
+2025-07-07 08:45:57,932 - app.services.auth_service - INFO - Authentication attempt for email: test@gmail.com
+2025-07-07 08:45:57,936 - passlib.handlers.bcrypt - DEBUG - detected 'bcrypt' backend, version '4.0.1'
+2025-07-07 08:45:57,937 - passlib.handlers.bcrypt - DEBUG - 'bcrypt' backend lacks $2$ support, enabling workaround
+2025-07-07 08:45:58,181 - app.services.auth_service - WARNING - Authentication failed for email: test@gmail.com
+2025-07-07 08:46:13,684 - app.services.auth_service - INFO - Authentication attempt for email: test@gmail.com
+2025-07-07 08:46:13,929 - app.services.auth_service - INFO - Authentication successful for user: test
+2025-07-07 08:55:58,364 - tzlocal - DEBUG - Looking up time zone info from registry
+2025-07-07 08:55:58,378 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-07-07 08:55:58,379 - apscheduler.scheduler - INFO - Added job "fetch_external_news_periodically" to job store "default"
+2025-07-07 08:55:58,379 - apscheduler.scheduler - INFO - Scheduler started
+2025-07-07 08:55:58,379 - apscheduler.scheduler - DEBUG - Looking for jobs to run
+2025-07-07 08:55:58,393 - apscheduler.scheduler - DEBUG - Next wakeup is due at 2025-07-07 09:25:58.378457+05:30 (in 1799.985381 seconds)
+2025-07-07 08:56:11,943 - app.services.auth_service - INFO - Authentication attempt for email: test@gmail.com
+2025-07-07 08:56:11,944 - passlib.handlers.bcrypt - DEBUG - detected 'bcrypt' backend, version '4.0.1'
+2025-07-07 08:56:11,944 - passlib.handlers.bcrypt - DEBUG - 'bcrypt' backend lacks $2$ support, enabling workaround
+2025-07-07 08:56:12,204 - app.services.auth_service - INFO - Authentication successful for user: test
+2025-07-07 08:56:14,445 - app.services.news_service - DEBUG - Fetching articles with skip=0, limit=10
+2025-07-07 08:56:14,445 - app.services.news_service - DEBUG - Retrieved 10 articles
+2025-07-07 08:56:37,590 - app.services.auth_service - INFO - Authentication attempt for email: capisbest07@mail.com
+2025-07-07 08:56:37,591 - app.services.auth_service - WARNING - Authentication failed for email: capisbest07@mail.com
+2025-07-07 08:59:33,041 - tzlocal - DEBUG - Looking up time zone info from registry
+2025-07-07 08:59:33,057 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-07-07 08:59:33,057 - apscheduler.scheduler - INFO - Added job "fetch_external_news_periodically" to job store "default"
+2025-07-07 08:59:33,057 - apscheduler.scheduler - INFO - Scheduler started
+2025-07-07 08:59:33,057 - apscheduler.scheduler - DEBUG - Looking for jobs to run
+2025-07-07 08:59:33,057 - apscheduler.scheduler - DEBUG - Next wakeup is due at 2025-07-07 09:29:33.057801+05:30 (in 1800.000000 seconds)
+2025-07-07 09:00:12,143 - app.services.auth_service - INFO - Authentication attempt for email: capisbest07@gail.com
+2025-07-07 09:00:12,150 - app.services.auth_service - WARNING - Authentication failed for email: capisbest07@gail.com
+2025-07-07 09:18:31,696 - tzlocal - DEBUG - Looking up time zone info from registry
+2025-07-07 09:18:31,713 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-07-07 09:18:31,713 - apscheduler.scheduler - INFO - Added job "fetch_external_news_periodically" to job store "default"
+2025-07-07 09:18:31,713 - apscheduler.scheduler - INFO - Scheduler started
+2025-07-07 09:18:31,714 - apscheduler.scheduler - DEBUG - Looking for jobs to run
+2025-07-07 09:18:31,727 - apscheduler.scheduler - DEBUG - Next wakeup is due at 2025-07-07 09:48:31.713545+05:30 (in 1799.985994 seconds)
+2025-07-07 09:18:42,401 - app.services.auth_service - INFO - Authentication attempt for email: capisbest@gmal.com
+2025-07-07 09:18:42,420 - app.services.auth_service - WARNING - Authentication failed for email: capisbest@gmal.com
+2025-07-07 09:21:41,727 - tzlocal - DEBUG - Looking up time zone info from registry
+2025-07-07 09:21:41,740 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-07-07 09:21:41,740 - apscheduler.scheduler - INFO - Added job "fetch_external_news_periodically" to job store "default"
+2025-07-07 09:21:41,740 - apscheduler.scheduler - INFO - Scheduler started
+2025-07-07 09:21:41,741 - apscheduler.scheduler - DEBUG - Looking for jobs to run
+2025-07-07 09:21:41,741 - apscheduler.scheduler - DEBUG - Next wakeup is due at 2025-07-07 09:51:41.740149+05:30 (in 1799.999000 seconds)
+2025-07-07 09:21:57,194 - app.services.auth_service - INFO - Authentication attempt for email: capisbest07@mail.com
+2025-07-07 09:21:57,214 - app.services.auth_service - WARNING - Authentication failed for email: capisbest07@mail.com
+2025-07-07 09:24:29,148 - tzlocal - DEBUG - Looking up time zone info from registry
+2025-07-07 09:24:29,164 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-07-07 09:24:29,164 - apscheduler.scheduler - INFO - Added job "fetch_external_news_periodically" to job store "default"
+2025-07-07 09:24:29,164 - apscheduler.scheduler - INFO - Scheduler started
+2025-07-07 09:24:29,165 - apscheduler.scheduler - DEBUG - Looking for jobs to run
+2025-07-07 09:24:29,173 - apscheduler.scheduler - DEBUG - Next wakeup is due at 2025-07-07 09:54:29.164101+05:30 (in 1799.991002 seconds)
+2025-07-07 09:24:54,045 - app.services.auth_service - INFO - Authentication attempt for email: capisbest@gail.com
+2025-07-07 09:24:54,065 - app.services.auth_service - WARNING - Authentication failed for email: capisbest@gail.com
+2025-07-07 09:29:44,700 - tzlocal - DEBUG - Looking up time zone info from registry
+2025-07-07 09:29:44,712 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-07-07 09:29:44,712 - apscheduler.scheduler - INFO - Added job "fetch_external_news_periodically" to job store "default"
+2025-07-07 09:29:44,712 - apscheduler.scheduler - INFO - Scheduler started
+2025-07-07 09:29:44,713 - apscheduler.scheduler - DEBUG - Looking for jobs to run
+2025-07-07 09:29:44,724 - apscheduler.scheduler - DEBUG - Next wakeup is due at 2025-07-07 09:59:44.712114+05:30 (in 1799.987902 seconds)
+2025-07-07 09:29:57,660 - app.services.auth_service - INFO - Authentication attempt for email: yogesh@gmail.com
+2025-07-07 09:29:57,677 - app.services.auth_service - WARNING - Authentication failed for email: yogesh@gmail.com
+2025-07-07 09:30:07,399 - app.services.auth_service - INFO - Authentication attempt for email: cpaisbest@gmail.com
+2025-07-07 09:30:07,401 - app.services.auth_service - WARNING - Authentication failed for email: cpaisbest@gmail.com
+2025-07-07 09:32:14,413 - app.services.auth_service - INFO - Authentication attempt for email: capisbest07@gmail.com
+2025-07-07 09:32:14,416 - passlib.handlers.bcrypt - DEBUG - detected 'bcrypt' backend, version '4.0.1'
+2025-07-07 09:32:14,417 - passlib.handlers.bcrypt - DEBUG - 'bcrypt' backend lacks $2$ support, enabling workaround
+2025-07-07 09:32:14,741 - app.services.auth_service - INFO - Authentication successful for user: cap
+2025-07-07 09:32:19,461 - app.services.news_service - DEBUG - Fetching articles with skip=0, limit=10
+2025-07-07 09:32:19,467 - app.services.news_service - DEBUG - Retrieved 10 articles
+2025-07-07 09:32:24,322 - app.services.news_service - DEBUG - Fetching articles with skip=0, limit=10
+2025-07-07 09:32:24,325 - app.services.news_service - DEBUG - Retrieved 10 articles
+2025-07-07 09:34:50,801 - tzlocal - DEBUG - Looking up time zone info from registry
+2025-07-07 09:34:50,816 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-07-07 09:34:50,817 - apscheduler.scheduler - INFO - Added job "fetch_external_news_periodically" to job store "default"
+2025-07-07 09:34:50,817 - apscheduler.scheduler - INFO - Scheduler started
+2025-07-07 09:34:50,818 - apscheduler.scheduler - DEBUG - Looking for jobs to run
+2025-07-07 09:34:50,833 - apscheduler.scheduler - DEBUG - Next wakeup is due at 2025-07-07 10:04:50.816515+05:30 (in 1799.982963 seconds)
+2025-07-07 09:35:04,451 - tzlocal - DEBUG - Looking up time zone info from registry
+2025-07-07 09:35:04,465 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-07-07 09:35:04,465 - apscheduler.scheduler - INFO - Added job "fetch_external_news_periodically" to job store "default"
+2025-07-07 09:35:04,465 - apscheduler.scheduler - INFO - Scheduler started
+2025-07-07 09:35:04,466 - apscheduler.scheduler - DEBUG - Looking for jobs to run
+2025-07-07 09:35:04,472 - apscheduler.scheduler - DEBUG - Next wakeup is due at 2025-07-07 10:05:04.464382+05:30 (in 1799.992304 seconds)
+2025-07-07 09:35:26,852 - app.services.auth_service - INFO - Authentication attempt for email: test@gmail.com
+2025-07-07 09:35:26,866 - passlib.handlers.bcrypt - DEBUG - detected 'bcrypt' backend, version '4.0.1'
+2025-07-07 09:35:26,867 - passlib.handlers.bcrypt - DEBUG - 'bcrypt' backend lacks $2$ support, enabling workaround
+2025-07-07 09:35:27,164 - app.services.auth_service - WARNING - Authentication failed for email: test@gmail.com
+2025-07-07 09:35:43,351 - app.services.auth_service - INFO - Registration attempt for email: shashi@gmail.com
+2025-07-07 09:35:43,686 - app.services.auth_service - INFO - Registration successful for user: shashi
+2025-07-07 09:35:52,587 - app.services.auth_service - INFO - Authentication attempt for email: shashi@gmail.com
+2025-07-07 09:35:52,858 - app.services.auth_service - INFO - Authentication successful for user: shashi
+2025-07-07 09:35:56,266 - app.services.news_service - DEBUG - Fetching articles with skip=0, limit=10
+2025-07-07 09:35:56,270 - app.services.news_service - DEBUG - Retrieved 10 articles
+2025-07-07 09:37:12,489 - app.services.auth_service - INFO - Authentication attempt for email: admin@gmail.com
+2025-07-07 09:37:12,765 - app.services.auth_service - INFO - Authentication successful for user: admin
+2025-07-07 10:01:39,172 - tzlocal - DEBUG - Looking up time zone info from registry
+2025-07-07 10:01:39,172 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-07-07 10:01:39,172 - apscheduler.scheduler - INFO - Added job "fetch_external_news_periodically" to job store "default"
+2025-07-07 10:01:39,172 - apscheduler.scheduler - INFO - Scheduler started
+2025-07-07 10:01:39,172 - apscheduler.scheduler - DEBUG - Looking for jobs to run
+2025-07-07 10:01:39,188 - apscheduler.scheduler - DEBUG - Next wakeup is due at 2025-07-07 10:31:39.172543+05:30 (in 1799.984275 seconds)
+2025-07-07 10:02:31,908 - app.services.auth_service - INFO - Authentication attempt for email: yogesh@gmail.com
+2025-07-07 10:02:31,912 - app.services.auth_service - WARNING - Authentication failed for email: yogesh@gmail.com
+2025-07-07 10:02:38,853 - app.services.auth_service - INFO - Authentication attempt for email: test@gmail.com
+2025-07-07 10:02:38,854 - passlib.handlers.bcrypt - DEBUG - detected 'bcrypt' backend, version '4.0.1'
+2025-07-07 10:02:38,854 - passlib.handlers.bcrypt - DEBUG - 'bcrypt' backend lacks $2$ support, enabling workaround
+2025-07-07 10:02:39,115 - app.services.auth_service - WARNING - Authentication failed for email: test@gmail.com
+2025-07-07 10:02:47,137 - app.services.auth_service - INFO - Authentication attempt for email: test@gmail.com
+2025-07-07 10:02:47,377 - app.services.auth_service - INFO - Authentication successful for user: test
+2025-07-07 10:02:50,637 - app.services.news_service - DEBUG - Fetching articles with skip=0, limit=10
+2025-07-07 10:02:50,637 - app.services.news_service - DEBUG - Retrieved 10 articles
+2025-07-07 10:33:09,104 - tzlocal - DEBUG - Looking up time zone info from registry
+2025-07-07 10:33:09,135 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-07-07 10:33:09,135 - apscheduler.scheduler - INFO - Added job "fetch_external_news_periodically" to job store "default"
+2025-07-07 10:33:09,135 - apscheduler.scheduler - INFO - Scheduler started
+2025-07-07 10:33:09,135 - apscheduler.scheduler - DEBUG - Looking for jobs to run
+2025-07-07 10:33:09,145 - apscheduler.scheduler - DEBUG - Next wakeup is due at 2025-07-07 11:03:09.135793+05:30 (in 1799.990160 seconds)
+2025-07-07 10:33:20,231 - app.services.auth_service - INFO - Authentication attempt for email: test@gmail.com
+2025-07-07 10:33:20,262 - passlib.handlers.bcrypt - DEBUG - detected 'bcrypt' backend, version '4.0.1'
+2025-07-07 10:33:20,262 - passlib.handlers.bcrypt - DEBUG - 'bcrypt' backend lacks $2$ support, enabling workaround
+2025-07-07 10:33:20,713 - app.services.auth_service - INFO - Authentication successful for user: test
+2025-07-07 11:15:21,265 - tzlocal - DEBUG - Looking up time zone info from registry
+2025-07-07 11:15:21,297 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-07-07 11:15:21,297 - apscheduler.scheduler - INFO - Added job "fetch_external_news_periodically" to job store "default"
+2025-07-07 11:15:21,297 - apscheduler.scheduler - INFO - Scheduler started
+2025-07-07 11:15:21,297 - apscheduler.scheduler - DEBUG - Looking for jobs to run
+2025-07-07 11:15:21,313 - apscheduler.scheduler - DEBUG - Next wakeup is due at 2025-07-07 11:45:21.297371+05:30 (in 1799.984355 seconds)
+2025-07-07 11:15:24,509 - app.services.auth_service - INFO - Authentication attempt for email: admin@gmail.com
+2025-07-07 11:15:24,526 - passlib.handlers.bcrypt - DEBUG - detected 'bcrypt' backend, version '4.0.1'
+2025-07-07 11:15:24,526 - passlib.handlers.bcrypt - DEBUG - 'bcrypt' backend lacks $2$ support, enabling workaround
+2025-07-07 11:15:25,032 - app.services.auth_service - INFO - Authentication successful for user: admin
+2025-07-07 11:19:04,450 - tzlocal - DEBUG - Looking up time zone info from registry
+2025-07-07 11:19:04,476 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-07-07 11:19:04,476 - apscheduler.scheduler - INFO - Added job "fetch_external_news_periodically" to job store "default"
+2025-07-07 11:19:04,476 - apscheduler.scheduler - INFO - Scheduler started
+2025-07-07 11:19:04,476 - apscheduler.scheduler - DEBUG - Looking for jobs to run
+2025-07-07 11:19:04,492 - apscheduler.scheduler - DEBUG - Next wakeup is due at 2025-07-07 11:49:04.476644+05:30 (in 1799.984348 seconds)
+2025-07-07 11:19:17,695 - app.services.auth_service - INFO - Authentication attempt for email: capisbest07@gmail.com
+2025-07-07 11:19:17,732 - passlib.handlers.bcrypt - DEBUG - detected 'bcrypt' backend, version '4.0.1'
+2025-07-07 11:19:17,732 - passlib.handlers.bcrypt - DEBUG - 'bcrypt' backend lacks $2$ support, enabling workaround
+2025-07-07 11:19:18,285 - app.services.auth_service - INFO - Authentication successful for user: cap
+2025-07-07 11:49:04,511 - apscheduler.scheduler - DEBUG - Looking for jobs to run
+2025-07-07 11:49:04,511 - apscheduler.executors.default - INFO - Running job "fetch_external_news_periodically (trigger: interval[0:30:00], next run at: 2025-07-07 11:49:04 IST)" (scheduled at 2025-07-07 11:49:04.476644+05:30)
+2025-07-07 11:49:04,511 - apscheduler.scheduler - DEBUG - Next wakeup is due at 2025-07-07 12:19:04.476644+05:30 (in 1799.965243 seconds)
+2025-07-07 11:49:04,511 - app.services.news_service - INFO - Fetching headlines for category: general
+2025-07-07 11:49:04,511 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-07-07 11:49:04,543 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\yogesh.upadhyay\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\certifi\\cacert.pem'
+2025-07-07 11:49:05,716 - httpcore.connection - DEBUG - connect_tcp.started host='newsapi.org' port=443 local_address=None timeout=5.0 socket_options=None
+2025-07-07 11:49:05,847 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001D310E8D760>
+2025-07-07 11:49:05,847 - httpcore.connection - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x000001D310CB21D0> server_hostname='newsapi.org' timeout=5.0
+2025-07-07 11:49:05,923 - httpcore.connection - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001D310312B10>
+2025-07-07 11:49:05,923 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2025-07-07 11:49:05,923 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-07-07 11:49:05,923 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2025-07-07 11:49:05,923 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-07-07 11:49:05,923 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2025-07-07 11:49:06,303 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Mon, 07 Jul 2025 06:19:06 GMT'), (b'Content-Type', b'application/json; charset=utf-8'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Content-Encoding', b'gzip'), (b'Cache-Control', b'no-cache'), (b'Pragma', b'no-cache'), (b'Expires', b'-1'), (b'X-Cached-Result', b'false'), (b'cf-cache-status', b'DYNAMIC'), (b'Report-To', b'{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=wm78kuXY8jseYL5GQcraVAmYJnHRk7W6C1CUD71xRHPYccSRchWP8oHfOTDz1oeWyKKcsTsNhNJgFEy9W%2Bkl2W5ruDoclpznVcxv8FKqerkZl%2BcFi5d6eXz%2BB26M"}],"group":"cf-nel","max_age":604800}'), (b'NEL', b'{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'), (b'Server', b'cloudflare'), (b'CF-RAY', b'95b53a7228f43b09-BOM'), (b'server-timing', b'cfL4;desc="?proto=TCP&rtt=42837&min_rtt=42745&rtt_var=16214&sent=4&recv=6&lost=0&retrans=0&sent_bytes=2843&recv_bytes=847&delivery_rate=67149&cwnd=249&unsent_bytes=0&cid=71ec1ba375a1e1cb&ts=350&x=0"')])
+2025-07-07 11:49:06,305 - httpx - INFO - HTTP Request: GET https://newsapi.org/v2/top-headlines?apiKey=08999c2c0fb44ff29c4352f27d402246&country=us&pageSize=10&category= "HTTP/1.1 200 OK"
+2025-07-07 11:49:06,325 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2025-07-07 11:49:06,328 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-07-07 11:49:06,328 - httpcore.http11 - DEBUG - response_closed.started
+2025-07-07 11:49:06,328 - httpcore.http11 - DEBUG - response_closed.complete
+2025-07-07 11:49:06,328 - httpcore.connection - DEBUG - close.started
+2025-07-07 11:49:06,328 - httpcore.connection - DEBUG - close.complete
+2025-07-07 11:49:06,366 - app.services.news_service - INFO - Fetched 9 headlines
+2025-07-07 11:49:53,813 - app.services.news_service - INFO - Stored 9 new articles
+2025-07-07 11:49:53,813 - apscheduler.executors.default - INFO - Job "fetch_external_news_periodically (trigger: interval[0:30:00], next run at: 2025-07-07 12:19:04 IST)" executed successfully
+2025-07-07 12:13:46,300 - tzlocal - DEBUG - Looking up time zone info from registry
+2025-07-07 12:13:46,316 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-07-07 12:13:46,316 - apscheduler.scheduler - INFO - Added job "fetch_external_news_periodically" to job store "default"
+2025-07-07 12:13:46,316 - apscheduler.scheduler - INFO - Scheduler started
+2025-07-07 12:13:46,316 - apscheduler.scheduler - DEBUG - Looking for jobs to run
+2025-07-07 12:13:46,332 - apscheduler.scheduler - DEBUG - Next wakeup is due at 2025-07-07 12:43:46.316373+05:30 (in 1799.984371 seconds)
+2025-07-07 12:14:28,103 - app.services.auth_service - INFO - Registration attempt for email: test1@gmail.com
+2025-07-07 12:14:28,119 - passlib.handlers.bcrypt - DEBUG - detected 'bcrypt' backend, version '4.0.1'
+2025-07-07 12:14:28,119 - passlib.handlers.bcrypt - DEBUG - 'bcrypt' backend lacks $2$ support, enabling workaround
+2025-07-07 12:14:28,397 - app.services.auth_service - INFO - Registration successful for user: test1
+2025-07-07 12:14:36,059 - app.services.auth_service - INFO - Authentication attempt for email: capisbest07@gmail.com
+2025-07-07 12:14:36,284 - app.services.auth_service - INFO - Authentication successful for user: cap
+2025-07-07 12:14:38,753 - app.services.news_service - DEBUG - Fetching articles with skip=0, limit=10
+2025-07-07 12:14:38,754 - app.services.news_service - DEBUG - Retrieved 10 articles
+2025-07-07 12:15:14,854 - app.services.auth_service - INFO - Authentication attempt for email: admin@gmail.com
+2025-07-07 12:15:15,094 - app.services.auth_service - INFO - Authentication successful for user: admin
+2025-07-07 19:58:13,153 - tzlocal - DEBUG - Looking up time zone info from registry
+2025-07-07 19:58:13,184 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-07-07 19:58:13,184 - apscheduler.scheduler - INFO - Added job "fetch_external_news_periodically" to job store "default"
+2025-07-07 19:58:13,184 - apscheduler.scheduler - INFO - Scheduler started
+2025-07-07 19:58:13,184 - apscheduler.scheduler - DEBUG - Looking for jobs to run
+2025-07-07 19:58:13,184 - apscheduler.scheduler - DEBUG - Next wakeup is due at 2025-07-07 20:28:13.184201+05:30 (in 1800.000000 seconds)
